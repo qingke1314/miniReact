@@ -58,21 +58,21 @@ function createDom(fiber) {
   return dom;
 }
 
-/**
- * 暴露给外部的 render 方法
- */
-function render(element, container) {
-  reconciler.createRoot(element, container);
-}
-
-const ReactDOM = {
-  render,
-};
-
-// 将平台相关的实现注入到 Reconciler 中
 reconciler.inject({
   createDom,
   updateDom
 });
+
+function createRoot(container) {
+  return {
+    render(element) {
+      reconciler.createRoot(element, container);
+    }
+  }
+}
+
+const ReactDOM = {
+  createRoot,
+};
 
 export default ReactDOM;

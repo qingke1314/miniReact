@@ -1,4 +1,4 @@
-import MiniReact, { useState } from "MiniReact";
+import { useState } from "react";
 import Count from '@/pages/Count/index';
 
 let idCounter = 4;
@@ -42,7 +42,7 @@ function App() {
         ))}
       </ul>
     </div>
-    <Count />
+    <Count text="hello" />
   </div>
 }
 

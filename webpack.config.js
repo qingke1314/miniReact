@@ -77,7 +77,8 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"], // 自动解析这些扩展名
     alias: {
-      MiniReact: path.resolve(__dirname, "MiniReact/index.js"),
+      react: path.resolve(__dirname, "MiniReact/packages/react"),
+      'react-dom': path.resolve(__dirname, "MiniReact/packages/react-dom/index.js"),
       '@': path.resolve(__dirname, 'src'),
     },
   },

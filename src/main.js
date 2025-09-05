@@ -1,15 +1,9 @@
-import MiniReact from "MiniReact";
+// 渲染器从 'react-dom' 包导入
+import ReactDOM from 'react-dom';
 import Home from "./pages/Home/index.jsx";
 
 const container = document.getElementById("root");
-function App() {
-  console.log('render APP');
-  return (
-    <div>
-      <h1>Hello, world!</h1>
-      <Home />
-    </div>
-  );
-}
 
-MiniReact.render(<App />, container);
+// 使用新的 createRoot API
+const root = ReactDOM.createRoot(container);
+root.render(<Home />);

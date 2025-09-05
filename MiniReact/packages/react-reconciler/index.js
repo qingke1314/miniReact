@@ -60,6 +60,7 @@ function reconcileChildren(fiber, elements) {
   let lastPlacedIndex = 0;
 
   for (let index = 0; index < elements.length; index++) {
+
     const element = elements[index];
     const key = element.key ?? index;
     const oldFiberMatch = oldFiberMap.get(key);
@@ -152,8 +153,9 @@ function updateHostComponent(fiber) {
 function shallowEqual(objA, objB) {
   if (Object.is(objA, objB)) return true;
   if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) return false;
-  const keysA = Object.keys(objA);
-  const keysB = Object.keys(objB);
+  const excludeKeys = ['children'];
+  const keysA = Object.keys(objA).filter(key => !excludeKeys.includes(key));
+  const keysB = Object.keys(objB).filter(key => !excludeKeys.includes(key));
   if (keysA.length !== keysB.length) return false;
   for (let i = 0; i < keysA.length; i++) {
     if (!Object.prototype.hasOwnProperty.call(objB, keysA[i]) || !Object.is(objA[keysA[i]], objB[keysA[i]])) return false;
@@ -214,8 +216,8 @@ function performUnitOfWork(fiber) {
   if (isMemoComponent) {
     const alternate = fiber.alternate;
     if (alternate && !fiber.needsUpdate) {
-      // 对比的是内层组件的 props
-      if (shallowEqual(fiber.type.props, alternate.type.props)) {
+      // 应该直接比较新旧两个 Fiber 节点的 props
+      if (shallowEqual(fiber.props, alternate.props)) { // <-- 已修正
         shouldBailOut = true;
       }
     }
@@ -281,12 +283,23 @@ function commitWork(fiber) {
   if (!fiber) return;
 
   let domParentFiber = fiber.return;
-  while (!domParentFiber.dom) {
+  while (domParentFiber && !domParentFiber.dom) {
     domParentFiber = domParentFiber.return;
+  }
+  // 如果 domParentFiber 为 null，说明已经到达根节点之上，直接返回
+  if (!domParentFiber) {
+    return;
   }
   const domParent = domParentFiber.dom;
 
-  if (fiber.effectTag === "PLACEMENT" && fiber.dom != null) {
+  if (fiber.effectTag === "PLACEMENT") {
+    let childWithDom = fiber;
+    // 如果当前 fiber 没有 dom，就向下寻找第一个有 dom 的子节点
+    while (!childWithDom.dom) {
+      childWithDom = childWithDom.child;
+    }
+
+    // 寻找插入的锚点（下一个兄弟DOM节点）
     let referenceNode = null;
     let nextSibling = fiber.sibling;
     while (nextSibling) {
@@ -296,18 +309,18 @@ function commitWork(fiber) {
       }
       nextSibling = nextSibling.sibling;
     }
-    domParent.insertBefore(fiber.dom, referenceNode);
+
+    domParent.insertBefore(childWithDom.dom, referenceNode);
+
   } else if (fiber.effectTag === "UPDATE" && fiber.dom != null) {
     hostConfig.updateDom(fiber.dom, fiber.alternate.props, fiber.props);
   } else if (fiber.effectTag === "DELETION") {
     commitDeletion(fiber, domParent);
+    // Deletion 需要提前返回，因为它已经处理了整个子树
     return;
   }
 
-  if (fiber.effects?.length && fiber.effectTag !== "DELETION") {
-    allEffects = allEffects.concat(fiber.effects);
-  }
-
+  // 正常遍历子节点和兄弟节点
   commitWork(fiber.child);
   commitWork(fiber.sibling);
 }
@@ -374,6 +387,13 @@ function useRef(initialValue) {
   return hook;
 }
 
+/**
+ * 1、在memo组件的父亲调和时，为memo组件生成的fiber的type为memoizedComponent，props照传
+ * 2、在为memo fiber进行调和时，使用fiber.type.type()生成组件，props照传（此处对比props和key，一致则复用旧树）
+ * 3、在提交阶段时，会发现类型为placement的fiber，但他的dom为null，因为memo组件的dom是他的子组件的dom，所以递归寻找子组件的dom然后挂载到其父亲的dom上
+ * @param {Function} Component 函数组件
+ * @returns {Object} 包裹后缓更新的组件
+ */
 function memo(Component) {
   const memoizedComponent = {
     $$typeof: REACT_MEMO_TYPE,
@@ -384,6 +404,7 @@ function memo(Component) {
 
 // ============ Reconciler 公共 API ============
 function createRoot(element, container) {
+
   wipRoot = {
     dom: container,
     props: {

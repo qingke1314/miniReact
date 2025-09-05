@@ -1,68 +1,20 @@
-import { TEXT_ELEMENT } from "../shared";
-import { reconciler } from "../react-reconciler";
+import { reconciler } from '../react-reconciler';
+import { createElement } from './jsx-runtime'; // 从新的 jsx-runtime 导入
 
-/**
- * 生成 text vDom
- */
-function createTextElement(text) {
-  return {
-    type: TEXT_ELEMENT,
-    props: {
-      nodeValue: text,
-      children: [],
-    },
-  };
-}
+// 直接从 reconciler 导出 Hooks
+export const useState = reconciler.useState;
+export const useEffect = reconciler.useEffect;
+export const useMemo = reconciler.useMemo;
+export const useCallback = reconciler.useCallback;
+export const useRef = reconciler.useRef;
+export const memo = reconciler.memo;
 
-/**
- * 自实现 createElement（jsx 转译后的 js 对象）
- */
-export function createElement(type, config, ...children) {
-  const props = { ...config };
-  // 单独设置key，用于优化diff算法
-  const key = props.key;
-  props.children = children
-    .flat()
-    .filter((child) => child != null && typeof child !== "boolean")
-    .map((child) => (typeof child === "object" ? child : createTextElement(child)));
-
-  return {
-    type,
-    props,
-    key,
-  };
-}
-
-export function useState(initialValue) {
-  return reconciler.useState(initialValue);
-}
-
-export function useEffect(callback, deps) {
-  return reconciler.useEffect(callback, deps);
-}
-
-export function useMemo(createFn, deps) {
-  return reconciler.useMemo(createFn, deps);
-}
-
-export function useCallback(callback, deps) {
-  return reconciler.useCallback(callback, deps);
-}
-
-export function useRef(initValue) {
-  return reconciler.useRef(initValue);
-}
-
-export function memo(Component) {
-  return reconciler.memo(Component);
-}
-
+// 导出 React 主对象
 const React = {
   createElement,
   useState,
   useEffect,
   useMemo,
-
   useCallback,
   useRef,
   memo,
