@@ -12,9 +12,43 @@ let rootDoesHaveUpdates = false; // <-- NEW: 调度标志位
 const REACT_MEMO_TYPE = Symbol.for("react.memo");
 
 // --- NEW: 调度函数 ---
-function scheduleUpdateOnFiber(fiber) {
+function scheduleUpdateOnFiber(fiberKey) {
+  let fiber = currentRoot;
+  // 使用 Map 替代 WeakMap，因为 fiberKey 可能是数字
+  const findItem = (root, keyToFind) => {
+    if (!root) return null;
+    const stack = [root];
+    const visited = new Set();
+    while (stack.length > 0) {
+      const node = stack.pop();
+      if (!node || visited.has(node.fiberKey)) {
+        continue;
+      }
+      visited.add(node.fiberKey);
+      if (node.fiberKey === keyToFind) {
+        return node;
+      }
+      // 为了模拟深度优先，先将兄弟节点入栈，再将子节点入栈
+      if (node.sibling) {
+        stack.push(node.sibling);
+      }
+      if (node.child) {
+        stack.push(node.child);
+      }
+    }
+    return null;
+  };
+
+  const item = findItem(currentRoot, fiberKey); // <-- 确保这里传入了 currentRoot 和 fiberKey
+  if (!item) {
+    console.warn("Could not find fiber to schedule update on.", fiberKey);
+    return;
+  }
+  if (!item) {
+    return;
+  }
   // 沿着return指针向上标记更新路径
-  let node = fiber;
+  let node = item;
   while (node) {
     node.needsUpdate = true; // <-- FIX: 修正拼写错误
     node = node.return;
@@ -28,7 +62,8 @@ function scheduleUpdateOnFiber(fiber) {
       props: currentRoot.props,
       alternate: currentRoot,
       needsUpdate: true, // <-- NEW: 标记根节点需要更新
-    }
+      fiberKey: currentRoot.fiberKey,
+    };
     nextUnitOfWork = wipRoot;
     deletions = [];
   }
@@ -36,16 +71,32 @@ function scheduleUpdateOnFiber(fiber) {
 
 // ============ 平台注入 ============
 let hostConfig = {
-  createDom: () => { throw new Error('Host config not injected.') },
-  updateDom: () => { throw new Error('Host config not injected.') },
+  createDom: () => {
+    throw new Error("Host config not injected.");
+  },
+  updateDom: () => {
+    throw new Error("Host config not injected.");
+  },
 };
 
 function inject(config) {
   hostConfig = { ...hostConfig, ...config };
 }
 
+// suipian/MiniReact/packages/react-reconciler/index.js
+
 // ============ 协调 (Reconciliation) ============
 function reconcileChildren(fiber, elements) {
+  // --- DEBUG START ---
+  console.group(
+    `reconcileChildren for [${
+      typeof fiber.type === "function" ? fiber.type.name : fiber.type
+    }]`
+  );
+  console.log("Parent Fiber:", fiber);
+  console.log("New Elements:", elements);
+  // --- DEBUG END ---
+
   const oldFiberMap = new Map();
   let oldFiber = fiber.alternate?.child;
   let i = 0;
@@ -56,15 +107,27 @@ function reconcileChildren(fiber, elements) {
     i++;
   }
 
+  // --- DEBUG START ---
+  console.log("Constructed oldFiberMap:", new Map(oldFiberMap));
+  // --- DEBUG END ---
+
   let prevSibling = null;
   let lastPlacedIndex = 0;
 
   for (let index = 0; index < elements.length; index++) {
-
     const element = elements[index];
     const key = element.key ?? index;
     const oldFiberMatch = oldFiberMap.get(key);
     let newFiber = null;
+
+    // --- DEBUG START ---
+    console.log(`Processing element at index ${index} with key:`, key);
+    if (oldFiberMatch) {
+      console.log("FOUND match in oldFiberMap:", oldFiberMatch.fiber);
+    } else {
+      console.log("NO match found in oldFiberMap.");
+    }
+    // --- DEBUG END ---
 
     if (oldFiberMatch) {
       const oldIndex = oldFiberMatch.index;
@@ -74,19 +137,23 @@ function reconcileChildren(fiber, elements) {
         newFiber = {
           type: oldActualFiber.type,
           props: element.props,
-          dom: oldActualFiber.dom, // 复用 DOM 节点
+          dom: oldActualFiber.dom,
           key,
           return: fiber,
-          alternate: oldActualFiber, // 正确设置 alternate 指针
-          effectTag: 'UPDATE',
-          needsUpdate: oldActualFiber.needsUpdate, // 正确传递更新状态
-          hooks: oldActualFiber.hooks, // 复用 hooks 数组以便 useState 能够找到旧状态
+          alternate: oldActualFiber,
+          effectTag: "UPDATE",
+          needsUpdate: oldActualFiber.needsUpdate,
+          hooks: oldActualFiber.hooks,
+          fiberKey: oldActualFiber.fiberKey,
         };
         if (oldIndex < lastPlacedIndex) {
-          newFiber.effectTag = 'PLACEMENT';
+          newFiber.effectTag = "PLACEMENT";
         } else {
           lastPlacedIndex = oldIndex;
         }
+        // --- DEBUG START ---
+        console.log(`-> Reusing Fiber. New effectTag: ${newFiber.effectTag}`);
+        // --- DEBUG END ---
       } else {
         newFiber = {
           type: element.type,
@@ -95,10 +162,16 @@ function reconcileChildren(fiber, elements) {
           key,
           return: fiber,
           alternate: null,
-          effectTag: 'PLACEMENT',
+          effectTag: "PLACEMENT",
+          fiberKey: Math.random() * Math.random(),
         };
         oldActualFiber.effectTag = "DELETION";
         deletions.push(oldActualFiber);
+        // --- DEBUG START ---
+        console.error(
+          "-> Type mismatch! Old fiber marked for DELETION, new fiber created with PLACEMENT."
+        );
+        // --- DEBUG END ---
       }
       oldFiberMap.delete(key);
     } else {
@@ -109,8 +182,12 @@ function reconcileChildren(fiber, elements) {
         key,
         return: fiber,
         alternate: null,
-        effectTag: 'PLACEMENT',
+        effectTag: "PLACEMENT",
+        fiberKey: Math.random() * Math.random(),
       };
+      // --- DEBUG START ---
+      console.log("-> Creating new Fiber with PLACEMENT.");
+      // --- DEBUG END ---
     }
 
     if (index === 0) {
@@ -121,10 +198,17 @@ function reconcileChildren(fiber, elements) {
     prevSibling = newFiber;
   }
 
-  oldFiberMap.forEach(match => {
+  // --- DEBUG START ---
+  console.log("Remaining fibers in oldFiberMap to be deleted:", oldFiberMap);
+  // --- DEBUG END ---
+  oldFiberMap.forEach((match) => {
     match.fiber.effectTag = "DELETION";
     deletions.push(match.fiber);
   });
+
+  // --- DEBUG START ---
+  console.groupEnd();
+  // --- DEBUG END ---
 }
 
 // ============ 渲染阶段 (Render Phase) ============
@@ -135,9 +219,8 @@ function updateFunctionComponent(fiber) {
   wipFiber.effects = [];
 
   // 如果是 memo 组件，真正的组件函数在 .type 属性上
-  const Component = fiber.type.$$typeof === REACT_MEMO_TYPE
-    ? fiber.type.type
-    : fiber.type;
+  const Component =
+    fiber.type.$$typeof === REACT_MEMO_TYPE ? fiber.type.type : fiber.type;
 
   const children = [Component(fiber.props)];
   reconcileChildren(fiber, children);
@@ -152,13 +235,23 @@ function updateHostComponent(fiber) {
 
 function shallowEqual(objA, objB) {
   if (Object.is(objA, objB)) return true;
-  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) return false;
-  const excludeKeys = ['children'];
-  const keysA = Object.keys(objA).filter(key => !excludeKeys.includes(key));
-  const keysB = Object.keys(objB).filter(key => !excludeKeys.includes(key));
+  if (
+    typeof objA !== "object" ||
+    objA === null ||
+    typeof objB !== "object" ||
+    objB === null
+  )
+    return false;
+  const excludeKeys = ["children"];
+  const keysA = Object.keys(objA).filter((key) => !excludeKeys.includes(key));
+  const keysB = Object.keys(objB).filter((key) => !excludeKeys.includes(key));
   if (keysA.length !== keysB.length) return false;
   for (let i = 0; i < keysA.length; i++) {
-    if (!Object.prototype.hasOwnProperty.call(objB, keysA[i]) || !Object.is(objA[keysA[i]], objB[keysA[i]])) return false;
+    if (
+      !Object.prototype.hasOwnProperty.call(objB, keysA[i]) ||
+      !Object.is(objA[keysA[i]], objB[keysA[i]])
+    )
+      return false;
   }
   return true;
 }
@@ -181,8 +274,10 @@ function cloneChildFibers(fiber) {
       dom: oldChild.dom,
       return: fiber, // <-- 关键：将 parent 指向新的 wip fiber
       alternate: oldChild,
-      effectTag: 'UPDATE', // 标记为 UPDATE 即可，commit 阶段会跳过无变化的更新
+      effectTag: "UPDATE", // 标记为 UPDATE 即可，commit 阶段会跳过无变化的更新
       needsUpdate: false, // 子节点也继承“无需更新”的状态
+      fiberKey: oldChild.fiberKey,
+      hooks: oldChild.hooks,
     };
 
     if (prevChild) {
@@ -195,7 +290,40 @@ function cloneChildFibers(fiber) {
   }
 }
 
-function completeUnitOfWork(fiber) {
+function performUnitOfWork(fiber) {
+  const isFunctionComponent = fiber.type instanceof Function;
+  const isMemoComponent = fiber.type && fiber.type.$$typeof === REACT_MEMO_TYPE;
+  let shouldBailOut = false;
+
+  if (isMemoComponent) {
+    const alternate = fiber.alternate;
+    if (alternate && !fiber.needsUpdate) {
+      if (shallowEqual(fiber.props, alternate.props)) {
+        shouldBailOut = true;
+      }
+    }
+  }
+
+  if (shouldBailOut) {
+    // 【修复】Bailout 时，只克隆子节点，然后让函数走到统一的出口逻辑
+    cloneChildFibers(fiber);
+  } else {
+    // 正常更新路径
+    if (isFunctionComponent || isMemoComponent) {
+      updateFunctionComponent(fiber);
+    } else {
+      updateHostComponent(fiber);
+    }
+  }
+
+  // 【修复】将寻找下一个工作单元的逻辑统一放在函数末尾
+  // 无论是否 bailout，只要产生了子节点，就应该先处理子节点
+  if (fiber.child) {
+    return fiber.child;
+  }
+
+  // 如果没有子节点，才向上寻找兄弟或父节点
+  // 使用一个循环来处理，避免深层嵌套的组件没有兄弟节点时直接返回 null
   let nextFiber = fiber;
   while (nextFiber) {
     if (nextFiber.sibling) {
@@ -203,46 +331,8 @@ function completeUnitOfWork(fiber) {
     }
     nextFiber = nextFiber.return;
   }
+
   return null;
-}
-
-function performUnitOfWork(fiber) {
-  const isFunctionComponent = fiber.type instanceof Function;
-  let shouldBailOut = false;
-
-  // 检查 fiber.type 是否是 memoized 组件
-  const isMemoComponent = fiber.type && fiber.type.$$typeof === REACT_MEMO_TYPE;
-
-  if (isMemoComponent) {
-    const alternate = fiber.alternate;
-    if (alternate && !fiber.needsUpdate) {
-      // 应该直接比较新旧两个 Fiber 节点的 props
-      if (shallowEqual(fiber.props, alternate.props)) { // <-- 已修正
-        shouldBailOut = true;
-      }
-    }
-  }
-
-  if (shouldBailOut) {
-    cloneChildFibers(fiber);
-    return completeUnitOfWork(fiber);
-  }
-
-  // isFunctionComponent 的判断也需要调整，以处理 memo 对象
-  if (isFunctionComponent || isMemoComponent) {
-    // 对于 memo 组件，我们需要调用其内部的原始组件 fiber.type.type
-    updateFunctionComponent(fiber);
-  } else {
-    updateHostComponent(fiber);
-  }
-
-  fiber.needsUpdate = false;
-
-  if (fiber.child) {
-    return fiber.child;
-  }
-
-  return completeUnitOfWork(fiber);
 }
 
 function workLoop(deadline) {
@@ -266,7 +356,7 @@ function commitRoot() {
   deletions.forEach(commitWork);
   commitWork(wipRoot.child);
 
-  allEffects.forEach(effect => {
+  allEffects.forEach((effect) => {
     if (effect.cleanup) effect.cleanup();
     const newCleanup = effect.callback();
     if (newCleanup) effect.cleanup = newCleanup;
@@ -303,7 +393,7 @@ function commitWork(fiber) {
     let referenceNode = null;
     let nextSibling = fiber.sibling;
     while (nextSibling) {
-      if (nextSibling.effectTag !== 'PLACEMENT' && nextSibling.dom) {
+      if (nextSibling.effectTag !== "PLACEMENT" && nextSibling.dom) {
         referenceNode = nextSibling.dom;
         break;
       }
@@ -311,7 +401,6 @@ function commitWork(fiber) {
     }
 
     domParent.insertBefore(childWithDom.dom, referenceNode);
-
   } else if (fiber.effectTag === "UPDATE" && fiber.dom != null) {
     hostConfig.updateDom(fiber.dom, fiber.alternate.props, fiber.props);
   } else if (fiber.effectTag === "DELETION") {
@@ -325,11 +414,41 @@ function commitWork(fiber) {
   commitWork(fiber.sibling);
 }
 
+/**
+ * 递归删除 fiber 树中的节点
+ * @param {Fiber} fiber - 要删除的 fiber 节点
+ * @param {DOMElement} domParent - 父 DOM 节点
+ */
 function commitDeletion(fiber, domParent) {
-  if (fiber.dom) {
-    domParent.removeChild(fiber.dom);
-  } else {
-    commitDeletion(fiber.child, domParent);
+  let node = fiber;
+  while (true) {
+    // 如果当前节点有 DOM，直接删除
+    if (node.dom) {
+      domParent.removeChild(node.dom);
+      // 同时也可以在这里处理 useEffect 的 cleanup 函数
+    }
+    // 如果它没有 DOM，但有子节点，就深入子节点
+    else if (node.child) {
+      node = node.child;
+      continue;
+    }
+
+    if (node === fiber) {
+      // 如果已经回到了最初的 fiber，说明整棵树都处理完了
+      return;
+    }
+
+    // 向上回溯，直到找到有兄弟节点的祖先
+    while (node.sibling === null) {
+      if (node.return === null || node.return === fiber) {
+        // 如果回溯到了根节点或最初的 fiber，结束
+        return;
+      }
+      node = node.return;
+    }
+
+    // 处理兄弟节点
+    node = node.sibling;
   }
 }
 
@@ -337,21 +456,25 @@ function commitDeletion(fiber, domParent) {
 function useState(initial) {
   const fiber = wipFiber;
   const oldHook = wipFiber.alternate?.hooks?.[hookIndex];
-
   const hook = {
-    state: oldHook ? oldHook.state : typeof initial === 'function' ? initial() : initial,
-    queue: [], // <-- FIX: queue 只用来暂存新 updates
+    state: oldHook
+      ? oldHook.state
+      : typeof initial === "function"
+      ? initial()
+      : initial,
+    queue: oldHook ? oldHook.queue : [], // <-- FIX: queue 只用来暂存新 updates
   };
-
-  const actions = oldHook ? oldHook.queue : [];
-  actions.forEach(action => {
-    hook.state = typeof action === 'function' ? action(hook.state) : action;
+  hook.queue.forEach((action) => {
+    hook.state = typeof action === "function" ? action(hook.state) : action;
   });
-
-  const setState = action => {
+  /**
+   * queue一直是同一个，只有memoizedState每次都重新算
+   */
+  hook.queue.length = 0; // 不改变hook地址的情况下清空已执行action
+  const setState = (action) => {
     // FIX: 只推送 action 本身，而不是一个 updateEvent 对象
     hook.queue.push(action);
-    scheduleUpdateOnFiber(fiber);
+    scheduleUpdateOnFiber(fiber.fiberKey);
   };
 
   wipFiber.hooks.push(hook);
@@ -362,7 +485,8 @@ function useState(initial) {
 // ... 其他 Hooks 保持不变 ...
 function useEffect(callback, deps) {
   const oldHook = wipFiber.alternate?.hooks?.[hookIndex];
-  const hasChanged = !deps || !oldHook || deps.some((dep, i) => dep !== oldHook.deps[i]);
+  const hasChanged =
+    !deps || !oldHook || deps.some((dep, i) => dep !== oldHook.deps[i]);
   const effect = { callback, deps, cleanup: oldHook?.cleanup };
   if (hasChanged) wipFiber.effects.push(effect);
   wipFiber.hooks.push(effect);
@@ -370,8 +494,12 @@ function useEffect(callback, deps) {
 }
 function useMemo(createFn, deps) {
   const oldHook = wipFiber.alternate?.hooks?.[hookIndex];
-  const hasChanged = !deps || !oldHook || deps.some((dep, i) => dep !== oldHook.deps[i]);
-  const hook = { memoizedValue: hasChanged ? createFn() : oldHook.memoizedValue, deps };
+  const hasChanged =
+    !deps || !oldHook || deps.some((dep, i) => dep !== oldHook.deps[i]);
+  const hook = {
+    memoizedValue: hasChanged ? createFn() : oldHook.memoizedValue,
+    deps,
+  };
   wipFiber.hooks.push(hook);
   hookIndex++;
   return hook.memoizedValue;
@@ -404,14 +532,15 @@ function memo(Component) {
 
 // ============ Reconciler 公共 API ============
 function createRoot(element, container) {
-
   wipRoot = {
     dom: container,
     props: {
       children: [element],
     },
+    // 使用 Symbol 作为 fiberKey，确保它是唯一的对象
+    fiberKey: currentRoot?.needsUpdate ? currentRoot.fiberKey : Symbol(),
     alternate: currentRoot,
-    needsUpdate: currentRoot?.needsUpdate
+    needsUpdate: currentRoot?.needsUpdate,
   };
   deletions = [];
   nextUnitOfWork = wipRoot;
@@ -425,5 +554,5 @@ export const reconciler = {
   useMemo,
   memo,
   useCallback,
-  useRef
+  useRef,
 };

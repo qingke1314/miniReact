@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // 自动生成html，并将打包好的js引进
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin"); // 压缩优化js代码
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -55,6 +56,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
+    }),
   ],
   devServer: {
     static: {
@@ -72,6 +77,24 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.(less)$/,
+        use: [
+          // 'style-loader', // 将编译和解析后的css注入<style />
+          MiniCssExtractPlugin.loader, // 构建时生成独立的css文件，并自动在html中引入
+          'css-loader', // 处理@import、url()
+          'postcss-loader', // 处理css的postcss插件
+          'less-loader', // 将less编译为css
+        ],
+      }
     ],
   },
   resolve: {
