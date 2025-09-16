@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-block;
+}
+
+.tree-transfer {
+  :global {
+    .privateAntd-tree-title {
+      color: var(--text-color);
+    }
+    .privateAntd-transfer-list-content-item-checked {
+      background-color: var(--background-color-base);
+    }
+    .privateAntd-transfer-list-content-item:not(.privateAntd-transfer-list-content-item-disabled).privateAntd-transfer-list-content-item-checked:hover {
+      background-color: var(--background-color-base);
+    }
+  }
+}

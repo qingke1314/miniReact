@@ -1,0 +1,36 @@
+.left_content {
+  height: 100%;
+  background: var(--background-color);
+  border-radius: 6px 0 6px 6px;
+  box-shadow: 0px 0px 17px 1px #ececec;
+
+  .left_tree {
+    :global {
+      .ant-tree-treenode {
+        padding: 4px 0 4px 0;
+      }
+      .ant-tree-treenode-selected {
+        background: var(--tree-selected-background-color) !important;
+        &::before {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          display: inline-block;
+          width: 4px;
+          height: 29px;
+          background: var(--primary-color) !important;
+          transition: none;
+          content: '';
+        }
+        .ant-tree-node-selected {
+          color: #fff !important;
+          background: var(--primary-color) !important;
+        }
+      }
+    }
+  }
+}
+
+.radio_button :global(.ant-radio-button-checked) {
+  background: var(--primary-color) !important;
+}

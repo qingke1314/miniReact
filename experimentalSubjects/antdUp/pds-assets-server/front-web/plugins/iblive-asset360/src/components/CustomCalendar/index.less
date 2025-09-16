@@ -1,0 +1,69 @@
+.custom_calendar,
+.custom_calendar_without_weekend {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  :global {
+    .ant-picker-panel {
+      flex: 1;
+      height: 0;
+      overflow-y: auto;
+    }
+    .ant-picker-body {
+      padding: 0 !important ;
+    }
+    .ant-picker-date-panel,
+    .ant-picker-body > table {
+      height: 100%;
+    }
+    .ant-picker-cell-inner {
+      position: relative;
+    }
+    .ant-picker-body > table thead {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #f7f7f7;
+    }
+    .ant-picker-body > table tbody tr {
+      height: 140px;
+      td .ant-picker-calendar-date-content {
+        height: 112px;
+      }
+      .ant-picker-cell-inner {
+        height: 100%;
+      }
+    }
+    .ant-picker-body > table thead tr th:nth-child(1),
+    .ant-picker-body > table thead tr th:nth-child(2),
+    .ant-picker-body > table thead tr th:nth-child(3),
+    .ant-picker-body > table thead tr th:nth-child(4),
+    .ant-picker-body > table thead tr th:nth-child(5) {
+      color: #186df5;
+      background: #f0faff;
+    }
+
+    .ant-picker-body > table thead tr th {
+      text-align: center;
+    }
+
+    // 都不是本月日期隐藏
+    .ant-picker-body
+      > table
+      tbody
+      tr:not(:has(td.ant-picker-cell-in-view)) {
+      display: none;
+    }
+  }
+}
+
+.custom_calendar_without_weekend {
+  :global {
+    .ant-picker-body > table thead tr th:nth-child(6),
+    .ant-picker-body > table thead tr th:nth-child(7),
+    .ant-picker-body > table tbody tr td:nth-child(6),
+    .ant-picker-body > table tbody tr td:nth-child(7) {
+      display: none;
+    }
+  }
+}

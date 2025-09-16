@@ -1,0 +1,90 @@
+.path_tabs > :global(.ant-tabs-nav) {
+  margin-bottom: 0;
+  color: #777;
+  font-weight: bold;
+  border-bottom: none;
+  &::before {
+    border: none;
+  }
+  :global {
+    .ant-tabs-ink-bar {
+      width: 90px;
+      background: #186df5;
+    }
+    .ant-tabs-tab {
+      padding: 8px 0;
+      font-size: 12px;
+      &:hover {
+        color: #186df5;
+      }
+    }
+    .ant-tabs-tab-active
+      .ant-tabs-tab-btn {
+      color: #186df5;
+    }
+    .ant-radio-button-wrapper-checked {
+      &::before {
+        display: none;
+      }
+    }
+    .ant-radio-button-checked {
+      color: #fff !important;
+      background: #186df5 !important;
+    }
+  }
+
+  .tab_icon {
+    color: #186df5;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+.rollback_icon {
+  background: #186df5;
+}
+.zcdy_select {
+  :global {
+    .ant-select-selector {
+      padding: 0 8px 0 0 !important;
+      .ant-select-selection-item {
+        color: #777 !important;
+        font-weight: bold !important;
+      }
+    }
+  }
+}
+
+.first_list_item {
+  position: relative;
+  height: 40px;
+  padding: 0 8px;
+  color: var(--default-text-color);
+  font-size: var(--default-text-size);
+  line-height: 40px;
+}
+.first_list_item_actived {
+  position: relative;
+  color: #fff;
+  background: var(--primary-color);
+}
+.second_list_item {
+  position: relative;
+  height: 40px;
+  padding: 0 8px;
+  color: var(--important-text-color);
+  font-size: var(--default-text-size);
+  line-height: 40px;
+}
+.second_list_item_actived {
+  color: var(--primary-color);
+  background: #fff;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 40px;
+    background: var(--primary-color);
+    content: '';
+  }
+}

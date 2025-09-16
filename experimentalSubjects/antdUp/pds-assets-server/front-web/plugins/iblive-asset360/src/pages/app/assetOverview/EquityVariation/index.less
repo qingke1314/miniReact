@@ -1,0 +1,130 @@
+.list_item {
+  flex-direction: column;
+  align-items: start;
+  :global {
+    .default-text {
+      width: 100%;
+      margin-top: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.work_calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .date_cell {
+    height: 112px;
+    .date_content {
+      height: 88px;
+      overflow: hidden;
+      line-height: 22px;
+    }
+  }
+  .more_button {
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    text-align: right;
+  }
+  .message_count {
+    position: absolute;
+    top: 4px;
+    :global {
+      .privateAntd-badge-count {
+        background-color: var(--primary-color);
+      }
+    }
+  }
+  :global {
+    .privateAntd-picker-panel {
+      flex: 1;
+      height: 0;
+      overflow-y: auto;
+    }
+    .privateAntd-picker-body {
+      padding: 0 !important ;
+    }
+    .privateAntd-picker-date-panel,
+    .privateAntd-picker-body > table {
+      height: 100%;
+    }
+    .privateAntd-picker-cell-inner {
+      position: relative;
+    }
+    .privateAntd-picker-body > table thead {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      // background: #f7f7f7;
+    }
+    .privateAntd-picker-body > table tbody tr {
+      height: 140px;
+      td .privateAntd-picker-calendar-date-content {
+        height: 112px;
+      }
+      .privateAntd-picker-cell-inner {
+        height: 100%;
+      }
+    }
+    .privateAntd-picker-body > table thead tr th:nth-child(6),
+    .privateAntd-picker-body > table thead tr th:nth-child(7),
+    .privateAntd-picker-body > table tbody tr td:nth-child(6),
+    .privateAntd-picker-body > table tbody tr td:nth-child(7) {
+      display: none;
+    }
+    // 都不是本月日期隐藏
+    .privateAntd-picker-body
+      > table
+      tbody
+      tr:not(:has(td.privateAntd-picker-cell-in-view)) {
+      display: none;
+    }
+  }
+}
+.month_switcher {
+  :global {
+    .privateAntd-pagination-simple-pager {
+      margin: 0;
+      color: #777777;
+      font-weight: 400;
+      font-size: var(--default-text-size);
+      input {
+        width: var(--current_input_width);
+        width: 30px;
+        margin: 0;
+        padding: 0;
+        color: #186df5;
+        background-color: transparent;
+        border: none;
+      }
+      span {
+        color: #a5a7af;
+      }
+    }
+  }
+}
+.custom_tabs {
+  display: flex;
+  flex-direction: column;
+  height: var(--custom-tabs-height);
+  min-height: 200px;
+  :global {
+    .privateAntd-tabs-nav {
+      margin-bottom: 0;
+    }
+    .privateAntd-tabs-content-holder {
+      flex: 1;
+      height: 0;
+      overflow: auto;
+      color: var(--default-text-color);
+      font-size: var(--default-text-size);
+      background: var(--background-color);
+      border-radius: 6px;
+      box-shadow: 0px 0px 17px 1px var(--box-shadow-base);
+    }
+  }
+}

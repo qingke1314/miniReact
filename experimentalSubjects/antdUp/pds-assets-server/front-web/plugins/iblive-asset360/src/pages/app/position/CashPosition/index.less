@@ -1,0 +1,670 @@
+.configs_right_content {
+  width: 100%;
+  height: var(--height);
+  padding-right: 5px;
+  padding-left: 10px;
+  // background: #fff;
+  :global {
+    .privateAntd-tabs-nav {
+      margin: 0;
+      background: transparent !important;
+    }
+    .privateAntd-tabs-content {
+      height: 100%;
+      overflow: auto;
+    }
+    .privateAntd-tabs-nav .privateAntd-tabs-tab-active {
+      background: transparent !important;
+    }
+    .privateAntd-tabs-tab.privateAntd-tabs-tab-active
+      .privateAntd-tabs-tab-btn,
+    .privateAntd-tabs-tab-active
+      .privateAntd-tabs-tab-remove {
+      color: #186df5;
+    }
+
+    .privateAntd-tabs-tab + .privateAntd-tabs-tab,
+    .privateAntd-tabs-tab {
+      border-right: 0px !important;
+    }
+
+    .privateAntd-tabs-ink-bar {
+      height: 3px;
+      background: #186df5;
+    }
+    .privateAntd-tabs-nav::before {
+      border-bottom: none;
+    }
+    // .privateAntd-tabs-nav{
+    //   background:none;
+    // }
+  }
+  .tab_title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+  .tab_date_picker {
+    position: absolute;
+    top: 56px;
+    right: 12px;
+  }
+  .cash_forecast_main {
+    :global {
+      .privateAntd-table-thead {
+        .privateAntd-table-cell {
+          color: var(--card-second-text);
+          font-weight: bold;
+          text-align: center !important;
+        }
+        tr:nth-child(1) {
+          .privateAntd-table-cell:nth-child(1) {
+            text-align: left;
+          }
+        }
+      }
+
+      .privateAntd-table-thead > tr > th {
+        background: var(--index-table-header-background);
+        border-right: 1px solid #fff;
+      }
+      .privateAntd-table-thead
+        > tr
+        > th:not(:last-child):not(.privateAntd-table-selection-column):not(.privateAntd-table-row-expand-icon-cell):not([colspan])::before {
+        // height: 100%;
+        // background-color: #fff;
+        display: none;
+      }
+    }
+    .fail_block {
+      margin-left: 8px;
+      padding: 0 2px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      background: #ef5350;
+      border-radius: 3px;
+    }
+    .unenable_block {
+      margin-left: 8px;
+      padding: 0 2px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      background: #aaaaaa;
+      border: 1px solid #00000017;
+      border-radius: 3px;
+    }
+  }
+  .cash_monitoring_main {
+    .secondaryTitle {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .pending_tag {
+      margin-left: 3px;
+      padding: 0px 4px;
+      color: #fff;
+      background: #4081ff;
+      border-radius: 3px;
+    }
+
+    .value {
+      color: var(--card-second-text);
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .value_down {
+      color: #20d08c;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .description {
+      margin-top: 5px;
+      color: #777777;
+      font-size: 14px;
+    }
+
+    :global {
+      .privateAntd-table-thead {
+        .privateAntd-table-cell {
+          color: var(--card-second-text);
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+      .privateAntd-table-thead > tr > th {
+        background: rgba(24, 109, 245, 0.1);
+      }
+      .privateAntd-table-thead
+        > tr
+        > th:not(:last-child):not(.privateAntd-table-selection-column):not(.privateAntd-table-row-expand-icon-cell):not([colspan])::before {
+        height: 100%;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .tab_pane {
+    display: flex;
+    flex-direction: column;
+  }
+  .tab_tools {
+    padding-left: 16px;
+    border-top: 1px solid @border-color-base;
+    border-bottom: 1px solid @border-color-base;
+  }
+  .tab_pane_main_content {
+    flex: 1;
+    height: 0;
+    padding: 16px 16px 0 16px;
+    overflow-y: auto;
+  }
+}
+.deal_drawer {
+  padding: 8px;
+  background: var(--component-background);
+  border-radius: 6px;
+}
+.deal_index_container {
+  padding: 8px;
+  background: var(--component-background);
+  border-radius: 6px;
+
+  .navigation_wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 17px;
+  }
+}
+
+.fund_calendar {
+  padding: 8px;
+  background: var(--component-background);
+  border-radius: 6px;
+
+  .close_icon {
+    float: right;
+    color: #777;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover {
+      color: #0070ff;
+    }
+  }
+  .close_detail_icon {
+    position: absolute;
+    right: 20px;
+    margin-top: -36px;
+    border: none;
+    box-shadow: none;
+  }
+  .close_time {
+    position: absolute;
+    right: 215px;
+    margin-top: -30px;
+  }
+
+  .cell_container {
+    .message_count {
+      position: absolute;
+      top: 4px;
+      :global {
+        .privateAntd-badge-count {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+    .cell_wrap {
+      position: relative;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      white-space: nowrap;
+
+      .block {
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 100%;
+      }
+
+      .cell_title {
+        // font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .value_up {
+        color: #ef5350;
+        white-space: nowrap;
+      }
+
+      .value_down {
+        color: #20d08c;
+        white-space: nowrap;
+      }
+    }
+    .cell_more {
+      position: absolute;
+      top: 113px;
+      right: 4px;
+      padding-right: 5px;
+      color: #108ee9;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }
+
+  :global {
+    .privateAntd-picker-panel {
+      flex: 1;
+      height: 100%;
+      overflow-y: auto;
+    }
+    .privateAntd-picker-body {
+      padding: 0 !important ;
+    }
+    .privateAntd-picker-date-panel,
+    .privateAntd-picker-body > table {
+      height: 100%;
+    }
+    .privateAntd-picker-cell-inner {
+      position: relative;
+    }
+    .privateAntd-picker-body > table thead {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      // background: #f7f7f7;
+    }
+    .privateAntd-picker-body > table tbody tr {
+      height: 140px;
+      td .privateAntd-picker-calendar-date-content {
+        height: 112px;
+      }
+      .privateAntd-picker-cell-inner {
+        height: 100%;
+      }
+    }
+    .privateAntd-picker-body > table thead tr th:nth-child(6),
+    .privateAntd-picker-body > table thead tr th:nth-child(7),
+    .privateAntd-picker-body > table tbody tr td:nth-child(6),
+    .privateAntd-picker-body > table tbody tr td:nth-child(7) {
+      display: none;
+    }
+    //日历表头
+    // .privateAntd-picker-content > thead > tr > th {
+    //   padding: 8px 0px !important;
+    //   color: #313131;
+    //   font-weight: bold;
+    //   text-align: center;
+    //   background: #ededed;
+    //   border-right: 1px solid #fff;
+    // }
+
+    // .privateAntd-picker-cell {
+    //   height: 140px;
+    // }
+
+    // .privateAntd-picker-cell-inner {
+    //   height: 140px !important;
+    // }
+
+    // .privateAntd-picker-calendar-full
+    //   .privateAntd-picker-panel
+    //   .privateAntd-picker-calendar-date {
+    //   margin: 0;
+    //   padding: 4px 0px 0;
+    //   border-top: 1px solid #f0f0f0;
+    //   border-right: 1px solid #f0f0f0;
+    // }
+
+    // .privateAntd-picker-calendar-header {
+    //   justify-content: start;
+    //   padding: 12px 20px;
+    // }
+
+    // //隐藏整个头部
+    .privateAntd-picker-calendar-header {
+      display: none;
+    }
+
+    // //隐藏月/年切换功能按钮
+    // // .privateAntd-radio-group {
+    // //   display: none;
+    // // }
+
+    // .privateAntd-picker-calendar-full
+    //   .privateAntd-picker-panel
+    //   .privateAntd-picker-calendar-date-content {
+    //   line-height: 1.2;
+    // }
+
+    //滚动条
+    .privateAntd-picker-calendar-date-content {
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        -webkit-appearance: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+    }
+  }
+}
+.custom_fund_details {
+  padding: 8px;
+  background:var(--component-background);
+  border-radius: 6px;
+}
+.configs_left_content {
+  .search_container {
+    display: flex;
+    flex-direction: column;
+    background: no-repeat left center var(--search_container-background);
+    background-size: cover;
+    :global {
+      //树顶部组合按钮样式
+      .privateAntd-radio-group {
+        width: 273px;
+        margin-top: 5px;
+
+        .privateAntd-radio-button-wrapper {
+          width: 91px;
+          height: 37px;
+          padding: 0 0 0 5px;
+          font-weight: bold;
+          line-height: 37px;
+          text-align: left;
+          // background: none;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          // border:1px solid #f0f0f0;
+        }
+        .privateAntd-radio-button-wrapper:first-child {
+          text-align: center;
+        }
+        .privateAntd-radio-button-wrapper:not(:first-child)::before {
+          display: none;
+        }
+
+        .privateAntd-radio-button-wrapper-checked {
+          border-bottom: 3px solid #186df5;
+          border-radius: 0;
+        }
+        .privateAntd-radio-button-wrapper:first-child {
+          border-radius: unset;
+        }
+        .privateAntd-radio-button-wrapper:last-child {
+          border-radius: unset;
+        }
+        .privateAntd-radio-button-wrapper-checked:not(.privateAntd-radio-button-wrapper-disabled)::before {
+          background-color: unset;
+        }
+        .privateAntd-radio-button-wrapper-checked:not(.privateAntd-radio-button-wrapper-disabled):focus-within {
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+
+  .dealDetail_search_container {
+    display: flex;
+    flex-direction: column;
+    background: no-repeat left center var(--search_container-background);
+    background-size: cover;
+    :global {
+      //树顶部组合按钮样式
+      .privateAntd-radio-group {
+        margin-top: 5px;
+
+        .privateAntd-radio-button-wrapper {
+          width: 70px;
+          height: 37px;
+          padding: 0 0 0 5px;
+          font-weight: bold;
+          line-height: 37px;
+          text-align: left;
+          // background: none;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          // border:1px solid #f0f0f0;
+        }
+        .privateAntd-radio-button-wrapper:first-child {
+          text-align: center;
+        }
+        .privateAntd-radio-button-wrapper:not(:first-child)::before {
+          display: none;
+        }
+
+        .privateAntd-radio-button-wrapper-checked {
+          border-bottom: 3px solid #186df5;
+          border-radius: 0;
+        }
+        .privateAntd-radio-button-wrapper:first-child {
+          border-radius: unset;
+        }
+        .privateAntd-radio-button-wrapper:last-child {
+          border-radius: unset;
+        }
+        .privateAntd-radio-button-wrapper-checked:not(.privateAntd-radio-button-wrapper-disabled)::before {
+          background-color: unset;
+        }
+        .privateAntd-radio-button-wrapper-checked:not(.privateAntd-radio-button-wrapper-disabled):focus-within {
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+
+  .tree_title_wrap {
+    display: flex;
+
+    .tree_title {
+      width: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  :global {
+    .privateAntd-tree-treenode-selected {
+      .privateAntd-tree-node-selected {
+        color: #186df5 !important;
+      }
+
+      &::after {
+        z-index: 1;
+        display: inline-block;
+        width: 3px;
+        height: 32px;
+        margin-right: -4px;
+        background: #4e9ff7;
+        content: '';
+      }
+    }
+  }
+}
+
+.tree_title_status {
+  margin-top: 3px;
+  margin-left: 5px;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 21px;
+  background: #ef5350;
+  border-radius: 3px;
+}
+
+.tree_title_status_2 {
+  margin-top: 3px;
+  margin-left: 5px;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 21px;
+  background: #ff763c;
+  border: 1px solid #ff763c;
+  border-radius: 3px;
+}
+.position_select {
+  width: 130px;
+
+  :global {
+    .privateAntd-select-selector {
+      height: 28px !important;
+      span {
+        line-height: 28px !important;
+      }
+    }
+  }
+}
+
+.dealindex_title {
+  color: #313131;
+  font-weight: bold;
+  background-color: #f7f7f7;
+}
+
+.dealindex_indexLevel {
+  color: #186df5;
+  font-weight: 500;
+  background-color: #186df51a;
+}
+
+.comm_label {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+.comm_btn {
+  height: 28px;
+  margin-left: 10px;
+  padding: 0px 11px;
+  color: var(--text-color);
+  font-size: 14px;
+  border-radius: 6px;
+}
+.comm_value_up {
+  color: #ef5350;
+}
+
+.comm_value_down {
+  color: #20d08c;
+}
+.comm_table_container {
+  padding: 8px;
+  background: var(--component-background);
+  border-radius: 6px;
+
+  .table_content_title_bar {
+    color: #313131;
+    font-weight: bold;
+    font-size: 14px;
+
+    :global {
+      td {
+        background: var(--table-second-title);
+      }
+    }
+  }
+
+  .table_content_total_bar {
+    :global {
+      td {
+        background: #186df51a;
+      }
+    }
+  }
+
+  .table_content_disabled_bar {
+    :global {
+      td {
+        // background: #ebc8c8;
+        // background: #fcf8ed;
+        // color: rgba(128, 128, 128, 0.5);
+        // text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.comm_update_date {
+  margin-left: 5px;
+  color: rgb(119, 119, 119);
+  font-size: 12px;
+}
+.comm_title {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 14px;
+
+  &::before {
+    display: inline-block;
+    width: 3px;
+    height: 13px;
+    margin-right: 9px;
+    background: #1153b8;
+    content: '';
+  }
+}
+
+.comm_modal_title {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+.ellipsis_column {
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.required_icon {
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: '*';
+}
+.form_tabs {
+  :global(.privateAntd-tabs-tab-btn) {
+    width: 100%;
+    text-align: end;
+  }
+}
+
+.code_editor_spin {
+  width: 100%;
+  height: 100%;
+
+  :global {
+    .privateAntd-spin-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

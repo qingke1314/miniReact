@@ -1,0 +1,64 @@
+/* PKProgressBar.css */
+
+.pk-progress-bar-container {
+  position: relative; /* 关键：作为所有内部绝对定位元素的父级 */
+  display: flex; /* 使用 flex 布局让左右两部分自然排列 */
+  width: 100%;
+  overflow: hidden; /* 隐藏超出圆角的部分 */
+  // background-color: #f0f2f5; /* 整体的背景/轨道颜色 */
+  // border-radius: 100px;
+}
+
+.pk-progress-bar {
+  height: 100%;
+  /* 取消之前的 absolute 定位，让 flex 生效 */
+}
+
+/* 移除了 .left-side 和 .right-side 的 absolute 定位
+  它们的宽度现在由组件内部的 style={{ width: '...' }} 动态设置
+*/
+
+/* 进度条组件本身的样式调整 */
+.pk-progress-bar {
+  :global {
+    .@{ant-main-prefix-cls}-progress {
+      display: block; /* 确保 progress 占满容器 */
+    }
+    .@{ant-main-prefix-cls}-progress-inner,
+    .@{ant-main-prefix-cls}-progress-bg {
+      border-radius: 0 !important; /* 关键：移除antd自带的圆角，避免在连接处出现缝隙 */
+    }
+  }
+}
+
+/* 左侧进度条的左上和左下部分保持父容器的圆角 */
+.pk-progress-bar.left-side {
+  overflow: hidden; /* 确保内部 progress 不会破坏圆角 */
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+/* 右侧进度条的右上和右下部分保持父容器的圆角 */
+.pk-progress-bar.right-side {
+  overflow: hidden;
+  //border-top-right-radius: 100px;
+  //border-bottom-right-radius: 100px;
+}
+
+/* 标签的容器，使用绝对定位覆盖在最上层 */
+.pk-progress-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 两端对齐 */
+  box-sizing: border-box; /* 确保 padding 不会影响宽度 */
+  width: 100%;
+  height: 100%;
+  padding: 0 15px; /* 给标签一些内边距 */
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 文字阴影，使其更清晰 */
+  pointer-events: none; /* 让鼠标事件可以穿透标签层 */
+}

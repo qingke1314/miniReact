@@ -1,0 +1,16 @@
+.custom_title {
+  display: flex;
+  align-items: center;
+  color: #505050;
+  font-weight: bold;
+  font-size: var(--default-text-size);
+  &::before {
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    margin-right: 8px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    content: '';
+  }
+}

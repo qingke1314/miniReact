@@ -1,0 +1,92 @@
+.calculatorButton {
+  width: 100%;
+  padding: 0;
+  color: #313131 !important;
+  border: 1px solid #e0e0e0;
+}
+
+.calculatorButton:focus {
+  border-color: #e0e0e0;
+}
+
+.calculatorButton:hover {
+  background: #fcfcfc;
+  border-color: #eeeeee;
+}
+
+.calculatorButton::after {
+  box-shadow: unset !important;
+}
+
+.calculatorButton:active {
+  opacity: 0.5 !important;
+}
+
+.calculator {
+  pointer-events: none;
+}
+
+.calculatorPopover {
+  :global {
+    .ant-popover-inner-content {
+      width: 275px;
+      padding: 4px 8px 8px 8px;
+    }
+  }
+}
+
+.calculatorMenus {
+  :global {
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-selected {
+      color: #313131;
+    }
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-item,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu {
+      margin-bottom: 8px;
+      padding: 0 8px;
+      font-size: 12px;
+      line-height: 32px;
+    }
+
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-item:hover::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu:hover::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-item-active::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-active::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-item-open::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-open::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-item-selected::after,
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-selected::after {
+      border-bottom: 2px solid #186df5;
+    }
+
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-selected {
+      color: #313131;
+    }
+    .ant-menu {
+      color: rgb(182,182,182);
+    }
+    .ant-menu-horizontal {
+      border-bottom: 0px;
+    }
+  }
+}
+
+.calculatorInputNumber {
+  :global {
+    .ant-input-number-input {
+      height: 26px;
+    }
+  }
+}

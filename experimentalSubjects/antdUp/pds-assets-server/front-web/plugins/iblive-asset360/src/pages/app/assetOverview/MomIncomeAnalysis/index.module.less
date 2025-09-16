@@ -1,0 +1,245 @@
+.incomeAnalysis {
+  height: calc(~'100vh - 80px');
+  color: var(--default-text-color);
+  font-size: var(--default-text-size);
+  border-radius: 3px;
+
+  :global {
+    .privateAntd-spin-container {
+      height: 100%;
+    }
+  }
+}
+
+.left {
+  top: 8px;
+  align-self: flex-start;
+  width: 380px;
+  padding: 8px !important;
+  // overflow-y: auto;
+  // background-color: var(--background-color);
+}
+
+.middle {
+  width: 8px;
+  height: 100%;
+  background-color: var(--background-color-light);
+}
+
+.rightContainer {
+  flex: 1;
+  // height: calc(~'100vh - 125px');
+  margin-left: 8px;
+  padding: 8px;
+  // overflow: auto;
+  // background-color: var(--background-color);
+}
+
+.right {
+  flex: 1;
+  // width: 700px;
+  margin-left: 8px;
+  padding: 8px;
+  border-right: 1px solid var(--border-color-base);
+}
+
+.top {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: var(--background-color);
+}
+
+.secondItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 12px 4px 8px;
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+  margin-top: 8px;
+
+  &:hover {
+    // border-color: var(--primary-color);
+    cursor: pointer;
+  }
+}
+
+.secondItem.secondActive {
+  position: relative;
+  // background: var(--primary-bg-color);
+  border-color: var(--primary-color);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid var(--primary-color);
+    border-right: 5px solid var(--primary-color);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: '';
+  }
+}
+
+.leftItem {
+  box-shadow: none !important;
+  border: 1px solid var(--border-color-base);
+
+  & + & {
+    margin-top: 8px;
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow-base);
+    cursor: pointer;
+  }
+}
+
+.leftItem.active {
+  // background: var(--primary-bg-color);
+  border: 1px solid var(--primary-color);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid var(--primary-color);
+    border-right: 10px solid var(--primary-color);
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    content: '';
+  }
+}
+
+.leftItem.productActive {
+  background: transparent;
+  // border: 1px solid var(--primary-color);
+}
+
+.combiList {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+// .combiListContainer {
+//   // border: 1px solid var(--border-color-base);
+// }
+.assetInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.combiName {
+  width: 150px;
+  overflow: hidden;
+  color: var(--primary-color);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &::before {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    margin-right: 4px;
+    background: var(--primary-color);
+    content: '';
+  }
+}
+
+.incomeAnalysisContent {
+  display: flex;
+  height: calc(~'100vh - 130px');
+  background: var(--background-color);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.incomeAnalysisEcharts {
+  position: relative;
+  overflow: hidden;
+}
+
+.operateInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rightBottom {
+  width: 400px;
+  margin-left: 8px;
+  padding: 8px;
+}
+
+.header {
+  top: 8px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 8px 8px 0;
+  background: var(--background-color);
+}
+
+.productCard {
+  position: relative;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+
+  &.active {
+    // background: var(--primary-bg-color);
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow-base);
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 10px solid var(--primary-color);
+      border-right: 10px solid var(--primary-color);
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      content: '';
+    }
+  }
+  //&:hover {
+  //background: var(--primary-bg-color);
+  // border-color: var(--primary-color);
+  //box-shadow: var(--box-shadow-base);
+  // cursor: pointer;
+  //}
+}
+
+.blockCard {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-color-base);
+}
+
+.paddingBlockCard {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-color-base);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: '1px solid var(--border-color-base)';
+}
+
+.moreFilter {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+}

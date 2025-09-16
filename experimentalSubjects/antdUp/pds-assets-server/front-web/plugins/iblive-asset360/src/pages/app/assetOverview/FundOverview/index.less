@@ -1,0 +1,27 @@
+.module_card:not(:first-child) {
+  margin-top: 8px;
+}
+.selected_row {
+  background: var(--table-row-selected);
+  :global {
+    .@{ant-main-prefix-cls}-table-cell-fix-left {
+      background: var(--table-row-selected);
+    }
+    .@{ant-main-prefix-cls}-table-column-sort {
+      background: var(--table-row-selected);
+    }
+  }
+}
+.custom_collapse {
+  :global {
+    .@{ant-main-prefix-cls}-collapse-header {
+      padding: 8px !important;
+      color: #1e286f !important;
+      font-weight: bold;
+      background: #e8edff !important;
+    }
+    .@{ant-main-prefix-cls}-collapse-content-box {
+      padding: 0;
+    }
+  }
+}

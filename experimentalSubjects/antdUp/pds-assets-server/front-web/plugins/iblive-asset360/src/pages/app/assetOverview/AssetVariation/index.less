@@ -1,0 +1,157 @@
+.assetInventory_main {
+  height: calc(~'100% - 154px');
+
+  .configs_left_content {
+    height: 100%;
+    background: url(~@asset360/assets/app/assetOverview/assetInventoryground.png)
+      no-repeat left center;
+    background-size: cover;
+
+    .tree_title_status {
+      float: right;
+      margin-top: 3px;
+      padding: 0 2px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 16px;
+      background: #ef5350;
+      border-radius: 3px;
+    }
+
+    .tree_title_status_2 {
+      float: right;
+      margin-top: 3px;
+      padding: 0 2px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 16px;
+      background: #ff763c;
+      border: 1px solid #ff763c;
+      border-radius: 3px;
+    }
+
+    :global {
+      .ant-tree-treenode-selected {
+        .ant-tree-node-selected {
+          color: #186df5 !important;
+        }
+
+        &::after {
+          z-index: 1;
+          display: inline-block;
+          width: 3px;
+          height: 32px;
+          margin-right: -4px;
+          background: #4e9ff7;
+          content: '';
+        }
+      }
+
+      .ant-radio-group {
+        width: 100%;
+
+        .ant-radio-button-wrapper {
+          width: 50%;
+          height: 37px;
+          font-weight: bold;
+          line-height: 37px;
+          text-align: center;
+          background: none;
+        }
+
+        .ant-radio-button-wrapper-checked {
+          border-top: none;
+          border-right: none;
+          border-bottom: 3px solid #186df5;
+          border-left: none;
+          border-radius: 0;
+        }
+      }
+
+      .ant-tree {
+        background: none;
+      }
+
+      .ant-tree-treenode:hover::before {
+        background: none;
+      }
+    }
+  }
+
+  .configs_right_content {
+    width: 100%;
+    height: var(--height);
+    padding-right: 5px;
+    padding-left: 10px;
+  }
+}
+
+.configs_right_card_content {
+  position: relative;
+  width: 500px;
+  height: var(--height);
+}
+
+.table_content {
+  :global {
+    td {
+      background: #e8edff;
+    }
+  }
+}
+
+.table_content_in {
+  :global {
+    td {
+      color: #ff0000 !important;
+    }
+  }
+}
+
+.table_content_out {
+  :global {
+    td {
+      color: #002fff !important;
+    }
+  }
+}
+
+.table_content_click_in {
+  :global {
+    td {
+      color: #ff0000 !important;
+      background: #e8edff;
+    }
+  }
+}
+
+.table_content_click_out {
+  :global {
+    td {
+      color: #002fff !important;
+      background: #e8edff;
+    }
+  }
+}
+
+.table_total_text {
+  font-weight: bold;
+}
+
+.table_title {
+  display: flex;
+  align-items: center;
+  color: #186df5;
+  font-weight: bold;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'PingFang SC', sans-serif; // 添加引号和通用字体族
+  &::before {
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    margin-right: 16px;
+    background: #186df5;
+    content: '';
+  }
+}

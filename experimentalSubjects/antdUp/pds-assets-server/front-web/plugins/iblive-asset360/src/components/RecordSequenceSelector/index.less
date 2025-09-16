@@ -1,0 +1,26 @@
+.record_history_selector {
+  min-width: 200px;
+  :global {
+    .@{ant-main-prefix-cls}-select-selector {
+      padding: 0 16px 0 11px !important;
+    }
+    .@{ant-main-prefix-cls}-select-selection-search {
+      left: 0 !important;
+    }
+    .@{ant-main-prefix-cls}-select-selection-item {
+      color: var(--important-text-color);
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .@{ant-main-prefix-cls}-select-arrow {
+      right: 4px;
+    }
+    .@{ant-main-prefix-cls}-select-clear {
+      right: 18px;
+    }
+  }
+}
+.record_history_selector:global(.@{ant-main-prefix-cls}-select-borderless)
+  :global(.@{ant-main-prefix-cls}-select-selector) {
+  padding: 0 16px 0 0 !important;
+}

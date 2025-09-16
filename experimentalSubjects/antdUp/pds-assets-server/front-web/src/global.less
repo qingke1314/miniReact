@@ -1,0 +1,159 @@
+@import './font.css';
+@import './var.less';
+@import '~antd/dist/antd.less';
+@import './editor.less';
+@import 'iblive-base/dist/styles/ReactContexify.css';
+
+body div,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body p {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+body {
+  font-size: var(--default-text-size);
+  font-family: BlinkMacSystemFont, 'myFont' !important;
+}
+
+// 时间选择-快捷按钮样式
+.privateAntd-picker-ranges > li > span {
+  background: transparent !important;
+  border-color: var(--primary-color) !important;
+}
+// 树形菜单icon颜色
+.tree_children_icon {
+  color: var(--green-color) !important;
+}
+.tree_group_icon {
+  color: var(--orange-color) !important;
+}
+.tree_root_icon {
+  color: var(--primary-color) !important;
+}
+
+.@{ant-main-prefix-cls}-notification-notice-close {
+  color: var(--close-button-color) !important;
+}
+
+.@{ant-main-prefix-cls}-drawer-content {
+  background: var(--background-color) !important;
+}
+
+.@{ant-main-prefix-cls}-input-clear-icon {
+  color: var(--clear-button-color) !important;
+}
+
+.@{ant-main-prefix-cls}-select-clear {
+  color: var(--clear-button-color) !important;
+}
+
+.@{ant-main-prefix-cls}-select-tree
+  .@{ant-main-prefix-cls}-select-tree-node-content-wrapper.@{ant-main-prefix-cls}-select-tree-node-selected {
+  background-color: var(--navigation-menu-selected-background-color) !important;
+}
+
+.ant-drawer-content {
+  background: var(--background-color) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* 滚动条的宽度 */
+  height: 8px; /* 滚动条的高度 */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color); /* 轨道的背景颜色 */
+  border-radius: 5px; /* 滑块的圆角 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color); /* 滑块的背景颜色 */
+  border-radius: 5px; /* 滑块的圆角 */
+}
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track-color);
+}
+
+.tag_text {
+  padding: 0 2px;
+}
+.blue-text {
+  color: var(--primary-color);
+}
+.error-text {
+  color: var(--error-color);
+}
+.success-text {
+  color: var(--success-color);
+}
+.warning-text {
+  color: var(--warning-color);
+}
+.tag_buy_text {
+  padding: 0 2px;
+  color: #fff;
+  background: var(--error-color);
+  border-radius: 4px;
+}
+.tag_sold_text {
+  padding: 0 2px;
+  color: #fff;
+  background: var(--success-color);
+  border-radius: 4px;
+}
+.tag_error_text {
+  .tag_text;
+  color: var(--error-color);
+  background: var(--error-bg-color);
+  border: 1px solid var(--error-color);
+  border-right: none;
+}
+.tag_success_text {
+  .tag_text;
+  color: var(--success-color);
+  background: var(--success-bg-color);
+  border: 1px solid var(--success-color);
+  border-right: none;
+}
+.tag_primary_text {
+  .tag_text;
+  color: var(--primary-color);
+  background: var(--primary-bg-color);
+  border: 1px solid var(--primary-color);
+  border-right: none;
+}
+.tag_warning_text {
+  .tag_text;
+  color: var(--warning-color);
+  background: var(--warning-bg-color);
+  border: 1px solid var(--warning-color);
+  border-right: none;
+}
+
+.default-text {
+  color: var(--default-text-color);
+  font-size: var(--default-text-size);
+}
+.blank-card-asset {
+  .default-text;
+  padding: 8px;
+  background: var(--background-color);
+  border-radius: 3px;
+  box-shadow: var(--box-shadow-base);
+}
+.header-card-asset {
+  .blank-card-asset;
+  display: flex;
+  align-items: center;
+  height: 120px;
+}

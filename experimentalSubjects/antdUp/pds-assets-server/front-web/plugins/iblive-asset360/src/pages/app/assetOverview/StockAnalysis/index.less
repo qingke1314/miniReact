@@ -1,0 +1,45 @@
+.content {
+  height: 100%;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(25deg);
+  }
+  20% {
+    transform: rotate(-25deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.bell {
+  color: var(--warning-color);
+  font-size: 14px;
+  animation: ring 1s linear infinite;
+}
+
+.activeRow {
+  background-color: rgba(24, 144, 255, 0.1) !important;
+  td {
+    background-color: transparent !important;
+  }
+}

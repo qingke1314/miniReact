@@ -1,0 +1,70 @@
+.operational_income_main {
+  height: 100%;
+  .top_wrap {
+    position: relative;
+    top: -8px;
+    right: 0;
+    left: 8px;
+    width: calc(~'100% + 16px');
+    height: 48px;
+    margin-left: -16px;
+    padding: 0 16px;
+    background: var(--component-background);
+    border-bottom: 1px solid var(--border-color-base);
+  }
+
+  .stock_main {
+    margin-top: 10px;
+
+    .totalProfitAmout {
+      :global {
+        b {
+          color: #ef5350 !important;
+        }
+      }
+    }
+    .totalDeficitAmout {
+      :global {
+        b {
+          color: #4e9ff7 !important;
+        }
+      }
+    }
+    .filter_title {
+      margin-bottom: 0;
+      font-weight: bold;
+      line-height: 33px;
+    }
+    .right_table_content {
+      width: 490px;
+      margin-left: 10px;
+      padding-top: 5px;
+
+      .close_icon {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .table_content_wrap {
+    display: flex;
+    flex-direction: column;
+
+    .content_first_merge_text {
+      padding-bottom: 8px;
+    }
+    .content_merge_text {
+      width: calc(~'100% + 16px');
+      margin-left: -8px;
+      padding: 8px 8px 8px 8px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .content_last_merge_text {
+      width: calc(~'100% + 16px');
+      margin-left: -8px;
+      padding: 8px 8px 0 8px;
+      border-top: 1px solid #f0f0f0;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.product_select {
+  min-width: 200px;
+  :global {
+    .ant-select-selector {
+      padding: 0 16px 0 11px !important;
+    }
+    .ant-select-selection-item,
+    .ant-select-selection-item {
+      font-size: 16px;
+    }
+    .ant-select-arrow {
+      right: 4px;
+    }
+    .ant-select-clear {
+      right: 18px;
+    }
+  }
+}
+.product_select {
+  :global {
+    .ant-select-arrow {
+      color: var(--important-text-color);
+      font-weight: bold;
+    }
+  }
+}
+.product_select:global(.ant-select-borderless)
+  :global(.ant-select-selector) {
+  padding: 0 16px 0 0 !important;
+}

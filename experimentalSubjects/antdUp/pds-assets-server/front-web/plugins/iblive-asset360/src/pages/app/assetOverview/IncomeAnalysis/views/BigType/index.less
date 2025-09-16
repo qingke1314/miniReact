@@ -1,0 +1,37 @@
+.content {
+  margin-top: 8px;
+  padding: 8px;
+  text-align: center;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+  row-gap: 4px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.list {
+  margin-top: 8px;
+  padding: 0 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+  &:hover {
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+  }
+  &.active {
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--primary-color);
+  }
+}

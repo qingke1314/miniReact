@@ -1,0 +1,56 @@
+.tree {
+  color: #313131;
+  background-color: var(--background-color)!important;
+  :global {
+    .@{ant-main-prefix-cls}-tree-treenode {
+      padding: 0 4px;
+      background: transparent;
+      &:hover {
+        background-color: var(--background-color)!important;
+      }
+    }
+    .@{ant-main-prefix-cls}-tree-treenode-selected,
+    .@{ant-main-prefix-cls}-tree-treenode-selected:hover,
+    .@{ant-main-prefix-cls}-tree-treenode-selected::before {
+      background: var(--tree-selected-background-color) !important;
+      color: var(--default-text-color) !important;
+    }
+    .@{ant-main-prefix-cls}-tree-treenode-selected
+      .@{ant-main-prefix-cls}-tree-switcher {
+      color: var(--text-color)!important;
+
+    }
+    .@{ant-main-prefix-cls}-tree-node-selected {
+      color: var(--text-color)!important;
+    }
+    .@{ant-main-prefix-cls}-tree-node-content-wrapper {
+      display: flex;
+      padding: 4px !important;
+    }
+    .@{ant-main-prefix-cls}-tree-title {
+      flex: 1;
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .@{ant-main-prefix-cls}-tree-indent-unit {
+      width: 16px !important;
+    }
+    .@{ant-main-prefix-cls}-tree-draggable-icon {
+      align-self: center;
+      width: fit-content;
+    }
+    .@{ant-main-prefix-cls}-tree-switcher {
+      align-self: center;
+      width: fit-content;
+      padding-left: 4px;
+    }
+    .@{ant-main-prefix-cls}-tree-checkbox {
+      margin: auto 4px;
+    }
+    .@{ant-main-prefix-cls}-tree-list-holder-inner {
+      color: var(--unselected-font-color)!important;
+    }
+  }
+}

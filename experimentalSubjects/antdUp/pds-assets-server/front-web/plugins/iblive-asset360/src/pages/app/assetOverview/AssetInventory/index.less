@@ -1,0 +1,256 @@
+.assetInventory_main {
+  // height: calc(100% - 264px);
+  // padding: 8px;
+  .tools {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+  }
+  .configs_left_content {
+    height: 100%;
+    color: var(--default-text-color);
+    font-weight: 500;
+    font-size: var(--default-text-size);
+    background: var(--background-color);
+    box-shadow: 0px 0px 17px 1px #ececec;
+    :global {
+      .privateAntd-tree-treenode-selected {
+        .privateAntd-tree-node-selected {
+          color: #313131 !important;
+        }
+
+        //选中标志
+        &::after {
+          position: absolute;
+          left: 0px;
+          z-index: 1;
+          display: inline-block;
+          width: 3px !important;
+          height: 100%;
+          margin-right: -4px;
+          background-color: #4e9ff7 !important;
+          content: '';
+        }
+      }
+    }
+    .tree_title_wrap {
+      .title_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        padding: 4px;
+      }
+    }
+    :global {
+      .privateAntd-progress-inner {
+        background-color: #7d7d7d33;
+      }
+      .privateAntd-tree-switcher_close {
+        position: absolute;
+        right: 12px;
+      }
+      .privateAntd-tree-treenode-switcher-close {
+        padding-bottom: 5px;
+        padding-left: 8px;
+        color: #1a6ef5;
+      }
+      .privateAntd-tree-treenode-switcher-open {
+        padding-bottom: 5px;
+        padding-left: 8px;
+        color: #1a6ef5;
+      }
+      .privateAntd-tree-switcher_open {
+        position: absolute;
+        right: 12px;
+      }
+    }
+  }
+  .money_head_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 64px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    background: var(--background-color);
+    border-radius: 6px;
+    box-shadow: 0px 0px 17px 1px var(--box-shadow-base);
+
+    .money_title {
+      color: var(--default-text-color);
+      font-size: var(--default-text-size);
+    }
+    .money_title_small {
+      .money_title;
+      font-size: var(--small-text-size);
+    }
+    .money_value {
+      color: var(--important-text-color);
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .money_value_small {
+      .money_value;
+      font-size: var(--default-text-size);
+    }
+  }
+  .comm_head_title {
+    //margin-left: 25px;
+    // font-size: 18px;
+    color: var(--text-color-secondary);
+  }
+  .comm_head_value {
+    color: var(--default-text-color);
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .comm_head_value_big {
+    color: var(--default-text-color);
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+  }
+  .comm_head_value_small {
+    color: var(--default-text-color);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+  }
+  .configs_right_content {
+    width: 100%;
+    height: var(--height);
+
+    .table_total_text {
+      position: absolute;
+      right: 15px;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .table_order_title {
+      position: absolute;
+      width: 600px;
+      line-height: 0px;
+    }
+
+    :global {
+      .ant-tabs-nav {
+        padding: 0 10px 0 15px;
+      }
+    }
+  }
+  .configs_right_card_content {
+    position: relative;
+    width: 590px;
+    height: var(--height);
+    padding-right: 5px;
+    padding-left: 5px;
+
+    .close_icon {
+      position: absolute;
+      top: 7px;
+      right: 54px;
+      height: 20px;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+
+    :global {
+      .ant-tabs-nav {
+        padding: 0 10px 0 15px;
+      }
+    }
+    .steps_wrap {
+      position: fixed;
+      right: 8px;
+      width: 90px;
+      height: 150px;
+      padding-top: 40px;
+    }
+  }
+  .table_column_menu_main {
+    margin: 6px 0 0 0;
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+}
+.quote_descriptions {
+  :global {
+    .ant-descriptions-item-content,
+    .ant-descriptions-item-label {
+      padding: 4px !important;
+    }
+    .@{ant-main-prefix-cls}-descriptions-row .@{ant-main-prefix-cls}-descriptions-item-label{
+      color: var(--text-color-secondary);
+      background-color: var(--background-color-table-boby);
+    }
+  }
+}
+
+.zuhe360_table_column_wrap {
+  width: 200px;
+
+  .footer_wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+
+  :global {
+    .privateAntd-popover-inner-content {
+      width: auto;
+      max-width: 100%;
+    }
+    .ant-tree-switcher {
+      display: none;
+    }
+    //通过css实现group节点不可拖动
+    .ant-tree-list-holder-inner {
+      div:first-child {
+        -webkit-user-drag: none;
+        .ant-tree-draggable-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.compact_style {
+  :global {
+    .ant-radio-wrapper {
+      margin-right: 2px;
+    }
+    span.ant-radio + * {
+      padding-right: 0;
+      padding-left: 2px;
+    }
+    .ant-radio-inner {
+      width: 12px;
+      height: 12px;
+    }
+    .ant-radio-inner::after {
+      width: 14px;
+      height: 14px;
+      margin-top: -7px;
+      margin-left: -7px;
+    }
+  }
+}
+
+.table_sort {
+  :global {
+    td {
+      background: #ededed73;
+      border-right: none !important;
+    }
+  }
+}
+.table_expand_icon {
+  &:hover {
+    color: #38adf5;
+  }
+}

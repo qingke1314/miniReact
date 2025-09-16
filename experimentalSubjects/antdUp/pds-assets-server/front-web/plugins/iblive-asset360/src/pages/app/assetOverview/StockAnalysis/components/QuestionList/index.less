@@ -1,0 +1,65 @@
+.question_direction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  .direction {
+    color: var(--text-color-secondary);
+  }
+  .preContent {
+    color: var(--primary-color);
+    // color: var(--text-color-secondary);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.text {
+  color: var(--normal-color);
+}
+
+.description {
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.flexContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editor {
+  :global {
+    .ql-container.ql-snow {
+      border: 1px solid var(--border-color-base);
+    }
+    .ql-toolbar.ql-snow {
+      border: 1px solid var(--border-color-base);
+    }
+  }
+}
+
+.comment {
+  margin-top: 8px;
+  color: var(--primary-color);
+  // color: var(--text-color-secondary);
+  cursor: pointer;
+  &:hover {
+    // color: var(--primary-color);
+    cursor: pointer;
+  }
+}
+
+.responseItem {
+  margin-top: 8px;
+  padding: 0 8px 8px 8px;
+  border: 1px solid var(--border-color-base);
+  border-radius: 4px;
+}
+
+.fullContent {
+  margin: 8px 0;
+}

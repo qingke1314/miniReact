@@ -1,0 +1,125 @@
+.content {
+  display: flex;
+}
+.left,
+.right {
+  border-radius: 4px;
+}
+.left {
+  background: #fcecec;
+}
+
+.right {
+  background: #d4f4ec;
+}
+
+/* FinancialPKBar.css */
+
+/* 定义颜色变量，方便修改主题 */
+:root {
+  --profit-color: #f86968;
+  --loss-color: #5b9ff0;
+  --divider-width: 10px; /* 斜切分割线的视觉宽度 */
+}
+
+.financial-pk-bar {
+  width: 100%;
+  max-width: 450px; /* 可以根据需要调整最大宽度 */
+  margin: 20px auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 顶部布局 */
+.pk-bar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pk-bar-info {
+  display: flex;
+  flex-direction: column;
+}
+.pk-bar-info.left {
+  align-items: flex-start;
+}
+.pk-bar-info.right {
+  align-items: flex-end;
+}
+.pk-bar-info .title {
+  font-weight: 500;
+  font-size: 16px;
+}
+.pk-bar-info .right-title {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: right;
+}
+.subtitle {
+  margin-top: 2px;
+  color: var(--text-color-secondary);
+  font-size: 12px;
+}
+
+/* 中间比分 */
+.pk-bar-ratio {
+  font-weight: bold;
+  font-size: 20px;
+}
+.pk-bar-ratio .ratio-profit {
+  color: #f86968;
+}
+.pk-bar-ratio .ratio-loss {
+  color: #5b9ff0;
+}
+.pk-bar-ratio .ratio-colon {
+  margin: 0 4px;
+}
+
+/* 进度条容器 */
+.pk-bar-progress-container {
+  display: flex;
+  width: 100%;
+  height: 16px;
+  margin-bottom: 8px;
+  overflow: hidden; /* 隐藏被切掉的部分 */
+  border-radius: 16px; /* 两端圆角 */
+}
+
+.pk-bar-progress {
+  height: 100%;
+}
+
+.profit-side {
+  /* 为了让切口更平滑，可以给右边留一点点空间 */
+  margin-right: -1px;
+  background-color: #f86968;
+  /* 关键：从右下角往左上角切掉一块，形成斜边 */
+  clip-path: polygon(0 0, 100% 0, calc(~'100% - 10px') 100%, 0 100%);
+}
+
+.loss-side {
+  background-color: #5b9ff0;
+  /* 关键：从左上角往右下角切掉一块，与左边完美拼接 */
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 底部布局 */
+.pk-bar-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pk-bar-value {
+  font-weight: bold;
+  font-size: 18px;
+}
+.profit-text {
+  color: #f86968;
+}
+.loss-text {
+  color: #5b9ff0;
+}

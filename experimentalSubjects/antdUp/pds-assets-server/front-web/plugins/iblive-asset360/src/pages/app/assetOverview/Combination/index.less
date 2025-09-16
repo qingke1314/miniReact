@@ -1,0 +1,65 @@
+.configs_left_content {
+  height: 100%;
+  color: var(--default-text-color);
+  font-weight: 500;
+  font-size: var(--default-text-size);
+  background: var(--background-color);
+  box-shadow: 0px 0px 17px 1px #ececec;
+  :global {
+    .ant-tree-treenode-selected {
+      .ant-tree-node-selected {
+        color: #313131 !important;
+      }
+
+      //选中标志
+      &::after {
+        position: absolute;
+        left: 0px;
+        z-index: 1;
+        display: inline-block;
+        width: 3px !important;
+        height: 100%;
+        margin-right: -4px;
+        background-color: #4e9ff7 !important;
+        content: '';
+      }
+    }
+  }
+  .tree_title_wrap {
+    .title_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: fit-content;
+      padding: 4px;
+    }
+  }
+  :global {
+    .ant-progress-inner {
+      background-color: #7d7d7d33;
+    }
+    .ant-tree-switcher_close {
+      position: absolute;
+      right: 12px;
+    }
+    .ant-tree-treenode-switcher-close {
+      padding-bottom: 5px;
+      padding-left: 8px;
+      color: #1a6ef5;
+    }
+    .ant-tree-treenode-switcher-open {
+      padding-bottom: 5px;
+      padding-left: 8px;
+      color: #1a6ef5;
+    }
+    .ant-tree-switcher_open {
+      position: absolute;
+      right: 12px;
+    }
+  }
+}
+
+.configs_right_content {
+  padding: 8px;
+  background-color: var(--background-color);
+}

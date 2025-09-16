@@ -1,0 +1,39 @@
+.label {
+  color: var(--text-color-secondary);
+  // font-weight: bold;
+  font-size: 14px;
+}
+.value {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 4px 8px;
+  border-bottom: 1px solid var(--border-color-base);
+  &:hover {
+    background-color: var(--primary-bg-color);
+  }
+}
+
+.label {
+  color: var(--text-color-secondary);
+  font-weight: bold;
+  text-align: center;
+}
+
+.container {
+  :global {
+    .privateAntd-table-row-level-0 {
+      background-color: var(--primary-bg-color) !important;
+    }
+    .privateAntd-table-cell {
+      // padding: 4px 8px !important;
+      border-right: none;
+      border-left: none;
+    }
+  }
+}

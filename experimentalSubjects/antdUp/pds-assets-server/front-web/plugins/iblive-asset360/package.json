@@ -1,0 +1,69 @@
+{
+  "name": "iblive-asset360",
+  "version": "1.0.0-beta.20250915205113",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist",
+    "lib",
+    "readme.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "father-build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,md,json}'",
+    "update-base": "pnpm add iblive-base@beta --force --save --verbose"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-url": "^8.0.2",
+    "@umijs/fabric": "~2.12.0",
+    "cross-env": "~7.0.3",
+    "cross-port-killer": "~1.4.0",
+    "father": "^4.5.2",
+    "father-build": "1.22.0",
+    "file-loader": "~6.2.0",
+    "less": "^2.7.3",
+    "lint-staged": "~10.0.7",
+    "prettier": "~2.2.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "~4.1.2",
+    "yorkie": "~2.0.0"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": ">=4.7.0",
+    "@ant-design/pro-layout": "~6.5.0",
+    "@ant-design/pro-table": "~2.76.4",
+    "@reduxjs/toolkit": "^2.5.1",
+    "@umijs/max": "4.0.26",
+    "@wangeditor/editor-for-react": "^1.0.6",
+    "ahooks": "~3.4.1",
+    "antd": "~4.22.0",
+    "axios": "~0.27.2",
+    "click-to-react-component": "1.0.8",
+    "crypto-js": "~4.1.1",
+    "echarts": "^5.6.0",
+    "iblive-base": "^0.0.6-beta.58",
+    "iblive-position": "^0.0.2-beta.71",
+    "lodash": ">=4.17.20",
+    "moment": "~2.29.3",
+    "monaco-editor": "^0.40.0",
+    "monaco-editor-webpack-plugin": "~7.0.1",
+    "prop-types": "~15.8.1",
+    "react": "~18.2.0",
+    "react-contexify": "~5.0.0",
+    "react-dom": "~18.2.0",
+    "react-draggable": "^4.4.6",
+    "react-draggable-tags": "~1.0.6",
+    "react-quill": "^2.0.0",
+    "react-redux": "7.2.9",
+    "react-use": "^17.6.0",
+    "react-window": "^1.8.11",
+    "umi": "4.0.26",
+    "virtuallist-antd": "^0.7.6"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

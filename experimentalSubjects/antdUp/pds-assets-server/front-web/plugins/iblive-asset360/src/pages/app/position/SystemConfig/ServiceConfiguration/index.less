@@ -1,0 +1,26 @@
+.type_tabs > :global(.ant-tabs-ink-bar) {
+  background: #186df5;
+}
+.type_tabs > :global(.ant-tabs-nav) {
+  height: 40px;
+  margin: 8px;
+  color: #777;
+  font-weight: bold;
+  &::before {
+    border: none;
+  }
+  :global {
+    .ant-tabs-tab {
+      &:hover {
+        color: #186df5;
+      }
+    }
+    .ant-tabs-tab-active
+      .ant-tabs-tab-btn {
+      color: #186df5;
+    }
+  }
+}
+.type_tabs {
+  margin-top: -8px;
+}

@@ -1,0 +1,82 @@
+.title {
+  color: #313131;
+  font-weight: bold;
+  background-color: #f7f7f7;
+}
+
+.indexLevel {
+  color: #186df5;
+  font-weight: 500;
+  background-color: #186df51a;
+}
+
+.cash_forecast_main {
+  :global {
+    .ant-table-thead {
+      .ant-table-cell {
+        color: #1e286f;
+        font-weight: bold;
+        text-align: center !important;
+      }
+      tr:nth-child(1) {
+        .ant-table-cell:nth-child(1) {
+          text-align: left;
+        }
+      }
+    }
+
+    .ant-table-thead > tr > th {
+      background: rgb(231, 240, 254);
+      border-right: 1px solid #fff;
+    }
+    .ant-table-thead
+      > tr
+      > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+      // height: 100%;
+      // background-color: #fff;
+      display: none;
+    }
+  }
+}
+
+.fail_block {
+  margin-left: 8px;
+  padding: 0 2px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  background: #ef5350;
+  border-radius: 3px;
+}
+.unenable_block {
+  margin-left: 8px;
+  padding: 0 2px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  background: #aaaaaa;
+  border: 1px solid #00000017;
+  border-radius: 3px;
+}
+.tree_title_status {
+  margin-top: 3px;
+  margin-left: 5px;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 21px;
+  background: #ef5350;
+  border-radius: 3px;
+}
+
+.tree_title_status_2 {
+  margin-top: 3px;
+  margin-left: 5px;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 21px;
+  background: #ff763c;
+  border: 1px solid #ff763c;
+  border-radius: 3px;
+}

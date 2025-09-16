@@ -1,0 +1,438 @@
+// 定义颜色变量
+@lightRed: #FF0000;
+@lightGreen: #DDF9E5;
+@lightBlue: #D7E6FF;
+@lightPurple: #E5E0FD;
+@lightOrange: #FFEEE7;
+
+:root {
+  --primary-color: #1186f1; // 全局主色
+  --success-color: #20d08c; // 成功色
+  --warning-color: #ffa500; // 警告色
+  --error-color: #ff2723; // 错误色
+  --primary-bg-color: #1890ff30; // 全局主色
+  --success-bg-color: #20d08c30; // 成功色
+  --warning-bg-color: #ffa50030; // 警告色
+  --error-bg-color: #ff272330; // 错误色
+  --highlight-color: #ff2723; // 高亮色
+  --normal-color: #d9d9d9; // 默认色
+  --title-sm-size: 14px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --heading-2-size: 22px;
+  --heading-3-size: 20px;
+  --heading-4-size: 18px;
+  --heading-5-size: 16px;
+  --remark-color: #909090;
+  --small-text-size: 12px;
+  --default-text-size: 12px;
+  --common-text-size: 16px;
+  --large-text-size: 18px;
+  --title-lg-size: 16px;
+  --red-color: #ff2723;
+  --green-color: #20d08c;
+  --gray-color: #7d7d7d;
+  --blue-color: #186df5;
+  --orange-color: #ffa500;
+  --important-number-color: #e79341;
+  --gradient: linear-gradient(90deg, #0596ea 0%, #186df5 13%, #3145ee 100%);
+  --line-1-height: 26px;
+  --line-2-height: 24px;
+  --line-3-height: 20px;
+  --line-4-height: 16px;
+  --font-1-size: 12px;
+  --font-2-size: 14px;
+  --font-3-size: 16px;
+  --font-4-size: 18px;
+}
+
+body[theme-size='small'] {
+  --title-header-size: 14px;
+  --table-content-size: 12px;
+}
+
+body[theme-size='middle'] {
+  --title-header-size: 16px;
+  --table-content-size: 14px;
+}
+
+body[theme-type='light'] {
+  --red-background: @lightRed; // 浅色模式红色
+  --green-background: @lightGreen; // 浅色模式绿色
+  --blue-background: @lightBlue; // 浅色模式蓝色
+  --purple-background: @lightPurple; // 浅色模式紫色
+  --orange-background: @lightOrange; // 浅色模式橘色
+  // antd
+  --border-color-base: #d4d9de;
+  --box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --background-color-base: #f7f7f7; // 背景色
+  --background-color-light: #ededed;
+  --text-color: rgb(48, 54, 63); // 主文本色
+  --text-color-secondary: #777777; // 辅助文本字体颜色
+  --component-background: #fff;
+  --card-color-secondary: #313131; // 次要表格背景色-ficp面板字色
+  --card-background-secondary: #fff; // 次要表格背景色-ficp面板
+  --table-header: #90909045; //表格头
+  // 自定义
+  --default-text-color: var(--text-color);
+  --tab-default-color: var(--text-color);
+  --tab-cursor-color: var(--primary-color);
+  --important-text-color: #313131;
+  --background-color: #ffffff;
+  --header-button-color: var(--primary-color);
+  --navigation-background-color: linear-gradient(
+    90deg,
+    #0596ea 0%,
+    #186df5 13%,
+    #3145ee 100%
+  );
+  --navigation-sider-background: #fff;
+  --navigation-title-color: #fff;
+  --navigation-menu-text-color: #ffffff99;
+  --navigation-menu-selected-color: #00f6ff !important;
+  --navigation-menu-selected-background-color: rgba(
+    0,
+    228,
+    255,
+    0.1
+  ); // 头部菜单选中项背景色
+  --tree-selected-background-color: #d2e4ff; //// 树选中项背景色
+  --content-background: #ededed;
+  --table-header-background: #e2e2e2;
+  --table-row-selected: #e7f0ff;
+  --background-color-table-boby: #ffffff;
+  --background-color-table-boby-hover: #f2f2f2;
+  --background-color-table-head: #e2e2e2;
+  --background-color-table-border: #f2f2f2;
+  --selected-row-color: #eaf0fd;
+  --unselected-font-color: #777777; //未选中颜色
+  --default-font-color: #313131; //未选中颜色
+  --non-editable-color: #999999; //只读、禁用
+  --click-color: #186df5; //可点击颜色
+  --warning-text-color: #ff2824; //预警/涨颜色
+  --fall-color: #20d08c; //跌
+  --hint-text-color: #ff7b2c; //提示文本
+  --input-addon-color: #ededed; //输入框后缀
+  --input-disabled-color: #f7f7f7; //输入框禁用
+  --picker-basic-cell-disabled-color: rgba(0, 0, 0, 0.04);
+  --titlebar-color: #fff;
+  --cards-header-background: #e5f4ff; //首页左侧卡片头部背景
+  --card-header-background: #fff; //首页卡片头部背景
+  --sider-selected-background: linear-gradient(135deg, #00c6ff, #3145ee);
+  --sider-selected-color: #fff;
+  --sider-color: var(--text-color);
+  --sider-hover-color: var(--primary-color);
+  --send_ins_btn-color: var(--blue-color);
+  --scrollbar-thumb-color: #b7b7b7;
+  --scrollbar-track-color: #f5f5f5;
+  --close-button-color: rgba(0, 0, 0, 0.45);
+  --clear-button-color: #999999;
+  --footer_background: #e6e6e6;
+  --time-line-color: #d7e6ff;
+  --risk_calc_btn-color: #6d7b91;
+  --card-background-color: #e6e6e6;
+  --select-combination-color:#fff;
+
+  --w-e-textarea-bg-color: var(--background-color);
+  --w-e-textarea-color: var(--text-color);
+  --w-e-textarea-border-color: var(--background-color-table-border);
+  --w-e-textarea-slight-border-color: #e8e8e8;
+  --w-e-textarea-slight-color: #d4d4d4;
+  --w-e-textarea-slight-bg-color: var(--background-color-table-head);
+  --w-e-textarea-selected-border-color: #b4d5ff;
+  --w-e-textarea-handler-bg-color: #4290f7;
+  --w-e-toolbar-color: #595959;
+  --w-e-toolbar-bg-color: var(--background-color);
+  --w-e-toolbar-active-color: #333;
+  --w-e-toolbar-active-bg-color: #f1f1f1;
+  --w-e-toolbar-disabled-color: #999;
+  --w-e-toolbar-border-color: #e8e8e8;
+  --w-e-modal-button-bg-color: #fafafa;
+  --w-e-modal-button-border-color: #d9d9d9;
+  --w-e-model-button-quotes-color-new: #1890ff;
+  --w-e-model-button-quotes-color-back: white;
+  --w-e-model-button-quotes-color-border: #1890ff;
+  --tabs--nav-color: #90909045;
+
+  --primary-1: #e6f7ff;
+  --primary-2: #bae7ff;
+  --primary-3: #91d5ff;
+  --primary-4: #69c0ff;
+  --primary-5: #40a9ff;
+  --primary-6: var(--primary-color);
+  --primary-7: #096dd9;
+  --primary-8: #0050b3;
+  --primary-9: #003a8c;
+  --primary-10: #002766;
+}
+// 暗肤色未补充完整，暂未显示
+body[theme-type='dark'] {
+  --red-background: exclusion(@lightRed, #333);
+  --green-background: exclusion(@lightGreen, #333);
+  --blue-background: exclusion(@lightBlue, #333);
+  --purple-background: exclusion(@lightPurple, #333);
+  --orange-background: exclusion(@lightOrange, #333);
+  // antd
+  --border-color-base: #464646;
+  --box-shadow-base: 0 3px 6px -4px rgba(255, 255, 255, 0.12),
+  0 6px 16px 0 rgba(0255, 255, 255, 0.08),
+  0 9px 28px 8px rgba(255, 255, 255, 0.05);
+  --background-color-base: #44484b; // 背景色
+  --background-color-light: #00aeff0f;
+  --text-color: rgba(255, 255, 255, 0.85); // 主文本色
+  --text-color-secondary: rgba(255, 255, 255, 0.6); // 辅助文本字体颜色
+  --component-background: #191b1f; // 表格body背景色
+  --card-color-secondary: #cdcdcd; // 次要表格背景色-ficp面板字色
+  --card-background-secondary: #686868; // 次要表格背景色-ficp面板
+  --table-header: #90909045; //表格头
+  // 自定义
+  --default-text-color: var(--text-color);
+  --tab-cursor-color: #f5f5f5;
+  --tab-default-color: #ffffff80;
+  --important-text-color: #00aeff;
+  --background-color: #191b1f;
+  --header-button-color: #555965;
+  --navigation-background-color: #2f343b;
+  --navigation-sider-background: #0f1012;
+  --navigation-title-color: #ffffff;
+  --navigation-menu-text-color: #ffffff80;
+  --navigation-menu-selected-color: #ffffff !important;
+  --navigation-menu-selected-background-color: #545965; // 头部菜单选中项背景色
+  --tree-selected-background-color: #545965; // 树选中项背景色
+  --content-background: #010102;
+  --table-row-selected: #767677;
+  --background-color-table-boby: #191b1f;
+  --background-color-table-boby-hover: #223a5a;
+  --background-color-table-head: #2b2e33;
+  --background-color-table-border: #22272e;
+  --selected-row-color: #223a5a; // 表格选中颜色
+  --input-addon-color: #1890ff; //输入框后缀
+  --input-disabled-color: #60666e; //输入框禁用
+  --picker-basic-cell-disabled-color: rgba(255, 255, 255, 0.1);
+  --unselected-font-color: rgba(255, 255, 255, 0.6); //未选中颜色
+  --non-editable-color: #60666e; //只读、禁用
+  --titlebar-color: #2f343b;
+  --cards-header-background: #22272e; //首页左侧卡片头部背景
+  --card-header-background: #22272e; //首页卡片头部背景
+  --sider-selected-background: none;
+  --sider-selected-color: #0196ff;
+  --sider-color: #6d7b91;
+  --sider-hover-color: var(--text-color);
+  --send_ins_btn-color: #0196ff;
+  --scrollbar-thumb-color: #727272;
+  --scrollbar-track-color: #b2b2b2;
+  --close-button-color: var(--text-color-secondary);
+  --clear-button-color: var(--text-color-secondary);
+  --footer_background: #2f2e2e;
+  --time-line-color: #5b6d8c;
+  --risk_calc_btn-color: transparent;
+  --card-background-color: #525355db;
+  --select-combination-color:#222f4d;
+
+  --w-e-textarea-bg-color: var(--background-color);
+  --w-e-textarea-color: var(--text-color);
+  --w-e-textarea-border-color: var(--background-color-table-border);
+  --w-e-textarea-slight-border-color: #e8e8e8;
+  --w-e-textarea-slight-color: #d4d4d4;
+  --w-e-textarea-slight-bg-color: var(--background-color-table-head);
+  --w-e-textarea-selected-border-color: var(
+    --navigation-menu-selected-background-color
+  );
+  --w-e-textarea-handler-bg-color: #4290f7;
+  --w-e-toolbar-color: var(--text-color);
+  --w-e-toolbar-bg-color: var(--background-color);
+  --w-e-toolbar-active-color: var(--text-color);
+  --w-e-toolbar-active-bg-color: var(
+    --navigation-menu-selected-background-color
+  );
+  --w-e-toolbar-disabled-color: #999;
+  --w-e-toolbar-border-color: var(--border-color-base);
+  --w-e-modal-button-bg-color: #a8a8a8;
+  --w-e-modal-button-border-color: var(--border-color-base);
+  --w-e-model-button-quotes-color-new: white;
+  --w-e-model-button-quotes-color-back: black;
+  --w-e-model-button-quotes-color-border: white;
+  --tabs--nav-color: none;
+
+  --primary-1: #010d1d;
+  --primary-2: #031c38;
+  --primary-3: #082c4e;
+  --primary-4: #0b4174;
+  --primary-5: #105ea6;
+  --primary-6: #157bd9; // middle
+  --primary-7: #3a98e6;
+  --primary-8: #64b6f2;
+  --primary-9: #8dcff7;
+  --primary-10: #b6e2fa;
+}
+
+.default-text {
+  color: var(--default-text-color);
+  font-size: var(--default-text-size);
+}
+
+.font-1-text {
+  color: var(--default-text-color);
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Arial;
+  line-height: 20px;
+}
+
+.font-2-text {
+  color: var(--default-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'PingFang SC';
+  line-height: 26px;
+}
+
+.font-3-text {
+  color: var(--default-text-color);
+  font-size: 14px;
+  font-family: 'PingFang SC';
+  line-height: 26px;
+}
+
+.font-4-text {
+  color: var(--default-text-color);
+  font-size: 14px;
+  font-family: 'PingFang SC';
+  line-height: 20px;
+}
+
+.font-5-text {
+  color: var(--default-text-color);
+  font-size: 12px;
+  font-family: 'PingFang SC';
+  line-height: 16px;
+}
+
+.title_bar {
+  .important-text;
+  //background: var(--titlebar-color);
+}
+
+.single_line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.small-text {
+  color: var(--default-text-color);
+  font-size: var(--small-text-size);
+}
+
+.common-text {
+  color: var(--default-text-color);
+  font-size: var(--common-text-size);
+}
+
+.important-text {
+  color: var(--important-text-color);
+  font-weight: bold;
+}
+
+.large-important-text {
+  .important-text;
+  font-size: var(--large-text-size);
+}
+
+.important-title {
+  .important-text;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  &::before {
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    margin-right: 4px;
+    background: var(--primary-color);
+    content: '';
+  }
+}
+
+.blank-card {
+  .default-text;
+  //padding: 16px;
+  background: var(--background-color);
+  box-shadow: var(--box-shadow-base);
+}
+
+.container-card {
+  .blank-card;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.header-card {
+  .blank-card;
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+
+.rise {
+  color: var(--red-color) !important;
+}
+.drop {
+  color: var(--green-color) !important;
+}
+.primary {
+  color: var(--primary-color) !important;
+}
+.remarks {
+  color: var(--remark-color) !important;
+}
+.cursor_pointer {
+  cursor: pointer;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+
+// 生成全局通用margin、padding样式
+@list: 0, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64;
+each(@list, {
+  .m-@{value} {
+    margin: @value * 1px;
+  }
+  .m-r-@{value} {
+    margin-right: @value * 1px;
+  }
+  .m-t-@{value} {
+    margin-top: @value * 1px;
+  }
+  .m-b-@{value} {
+    margin-bottom: @value * 1px;
+  }
+  .m-l-@{value} {
+    margin-left: @value * 1px;
+  }
+  .p-@{value} {
+    padding: @value * 1px;
+  }
+  .p-t-@{value} {
+    padding-top: @value * 1px;
+  }
+  .p-b-@{value} {
+    padding-bottom: @value * 1px;
+  }
+  .p-r-@{value} {
+    padding-right: @value * 1px;
+  }
+  .p-l-@{value} {
+    padding-left: @value * 1px;
+  }
+});
