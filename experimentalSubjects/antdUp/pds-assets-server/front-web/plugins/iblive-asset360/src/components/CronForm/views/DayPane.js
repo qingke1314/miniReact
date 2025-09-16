@@ -1,4 +1,4 @@
-import { InputNumber, Radio, Select, Space } from 'antd';
+import { InputNumber, Radio, Select, Space } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import DaySelect from '../components/DaySelect';
 import InputFormInterval from '../components/InputFormInterval';

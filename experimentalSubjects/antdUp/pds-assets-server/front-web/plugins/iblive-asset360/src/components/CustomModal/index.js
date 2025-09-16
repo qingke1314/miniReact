@@ -10,7 +10,7 @@ import {
   FullscreenExitOutlined,
   FullscreenOutlined,
 } from '@ant-design/icons';
-import { Modal } from 'antd';
+import { Modal } from 'antd-v5';
 import { useState } from 'react';
 import styles from './index.less';
 

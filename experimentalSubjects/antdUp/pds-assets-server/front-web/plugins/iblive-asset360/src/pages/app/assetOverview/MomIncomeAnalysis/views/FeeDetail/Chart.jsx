@@ -10,7 +10,7 @@ import { LabelLayout } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import { useEffect, useRef } from 'react';
 import { colorList as color } from '@asset360/utils/utils';
-import { Empty } from 'antd';
+import { Empty } from 'antd-v5';
 
 echarts.use([
   GraphicComponent,

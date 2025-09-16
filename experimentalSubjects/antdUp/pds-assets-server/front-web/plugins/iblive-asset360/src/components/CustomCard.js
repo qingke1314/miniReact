@@ -8,7 +8,7 @@
 /*
   含有统一标题样式的card
 */
-import { Card } from 'antd';
+import { Card } from 'antd-v5';
 import CustomTitle from './CustomTitle';
 
 const CustomCard = ({

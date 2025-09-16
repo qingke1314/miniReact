@@ -1,4 +1,4 @@
-import { Button, Rate } from 'antd';
+import { Button, Rate } from 'antd-v5';
 import styles from './index.less';
 
 const getColor = (status) => {

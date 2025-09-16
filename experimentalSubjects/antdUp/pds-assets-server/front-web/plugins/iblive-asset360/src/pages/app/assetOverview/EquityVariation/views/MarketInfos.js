@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-11-06 09:52:52
  * @Description:
  */
-import { List } from 'antd';
+import { List } from 'antd-v5';
 import styles from '../index.less';
 
 const list = new Array(10).fill(

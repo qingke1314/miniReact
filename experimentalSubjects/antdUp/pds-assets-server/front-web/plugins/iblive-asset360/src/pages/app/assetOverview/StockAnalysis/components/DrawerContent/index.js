@@ -4,7 +4,7 @@ import {
   querySecQuestionPage,
   querySecQuestionPool,
 } from '@asset360/apis/stockAnalysis';
-import { Button, Form, message, Pagination } from 'antd';
+import { Button, Form, message, Pagination } from 'antd-v5';
 import { CustomForm, CustomTabs } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

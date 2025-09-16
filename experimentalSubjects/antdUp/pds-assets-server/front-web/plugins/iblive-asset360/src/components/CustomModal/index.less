@@ -1,13 +1,13 @@
 .custom_modal {
   :global {
-    .@{ant-main-prefix-cls}-modal-content {
+    .privateAntd-modal-content {
       position: relative;
       display: flex;
       flex-direction: column;
-      .@{ant-main-prefix-cls}-modal-header {
+      .privateAntd-modal-header {
         padding-right: 80px;
       }
-      .@{ant-main-prefix-cls}-modal-body {
+      .privateAntd-modal-body {
         flex: 1;
         height: 0;
       }
@@ -15,8 +15,8 @@
     .privateAntd-select-multiple .privateAntd-select-selection-item-remove {
       color: var(--text-color-secondary);
     }
-    //.@{ant-main-prefix-cls}-select-multiple {
-    //  .@{ant-main-prefix-cls}-select-selection-item {
+    //.privateAntd-select-multiple {
+    //  .privateAntd-select-selection-item {
     //    background: var(--select-multiple-selected-background);
     //  }
     //  .privateAntd-select-tree-node-selected{
@@ -24,7 +24,6 @@
     //  }
     //
     //}
-
   }
   .full_screen_icon,
   .close_icon {
@@ -52,12 +51,12 @@
   height: 100vh;
   margin: 0;
   :global {
-    .@{ant-main-prefix-cls}-modal-content {
+    .privateAntd-modal-content {
       width: 100vw;
       height: 100vh;
       margin: 0;
       padding: 0;
-      .@{ant-main-prefix-cls}-modal-body {
+      .privateAntd-modal-body {
         max-height: 100vh !important;
       }
     }

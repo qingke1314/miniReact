@@ -13,7 +13,7 @@ import {
 } from '@asset360/apis/positionDelivery';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Col, Form, InputNumber, message, Row, Select } from 'antd';
+import { Col, Form, InputNumber, message, Row, Select } from 'antd-v5';
 import { CustomTableWithYScroll, randomWord } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 

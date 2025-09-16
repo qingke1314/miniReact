@@ -9,7 +9,7 @@ import { SyncOutlined } from '@ant-design/icons';
 import { queryFundCfgAll, updateFundCfgUpdate } from '@asset360/apis/position';
 import save from '@asset360/assets/app/position/save.svg';
 import CustomCard from '@asset360/components/CustomCard';
-import { Col, Input, message, Row, Space, Tabs } from 'antd';
+import { Col, Input, message, Row, Space, Tabs } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { debounce } from 'lodash';
 import { useEffect, useRef, useState } from 'react';

@@ -5,7 +5,7 @@ import {
   LegendComponent,
   TooltipComponent,
 } from 'echarts/components';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import * as echarts from 'echarts/core';
 import { LabelLayout } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';

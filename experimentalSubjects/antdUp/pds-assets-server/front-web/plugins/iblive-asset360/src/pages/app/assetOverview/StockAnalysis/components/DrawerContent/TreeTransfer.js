@@ -1,4 +1,4 @@
-import { Transfer, Tree } from 'antd';
+import { Transfer, Tree } from 'antd-v5';
 import React from 'react';
 import styles from './index.less';
 

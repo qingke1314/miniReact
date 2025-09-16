@@ -1,5 +1,5 @@
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import React, { useEffect, useState } from 'react';
 import Panzhi from '../panzhi';
 import SecIncomeChart from '../SecIncomeChart';

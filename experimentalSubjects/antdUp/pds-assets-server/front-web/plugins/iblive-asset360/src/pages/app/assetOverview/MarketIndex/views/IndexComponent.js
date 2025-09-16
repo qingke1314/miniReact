@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-12-30 15:52:36
  * @Description:
  */
-import { Col, Radio, Row } from 'antd';
+import { Col, Radio, Row } from 'antd-v5';
 import { useState } from 'react';
 import IndexInfoComponentTable from './IndexInfoComponentTable';
 import IndustrialDistribution from './IndustrialDistribution';

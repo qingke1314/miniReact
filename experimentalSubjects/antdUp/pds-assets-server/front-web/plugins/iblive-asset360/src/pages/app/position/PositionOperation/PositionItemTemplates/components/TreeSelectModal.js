@@ -12,7 +12,7 @@ import {
 } from '@asset360/apis/positionTemplate';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Button, message, TreeSelect } from 'antd';
+import { Button, message, TreeSelect } from 'antd-v5';
 import { useEffect, useState } from 'react';
 export default ({ visible, onCancel, node }) => {
   const [selectedFunds, setSelectedFunds] = useState([]);

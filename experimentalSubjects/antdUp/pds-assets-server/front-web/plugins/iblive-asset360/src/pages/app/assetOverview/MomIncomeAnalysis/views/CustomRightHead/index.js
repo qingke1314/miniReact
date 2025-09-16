@@ -1,6 +1,6 @@
 import { CustomForm } from 'iblive-base';
 import { useEffect } from 'react';
-import { Form } from 'antd';
+import { Form } from 'antd-v5';
 
 const CustomHead = ({ assetData = [], onChangeFirst }) => {
   const [form] = Form.useForm();

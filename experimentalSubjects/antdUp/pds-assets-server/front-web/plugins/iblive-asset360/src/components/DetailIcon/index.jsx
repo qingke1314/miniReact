@@ -1,4 +1,4 @@
-import { Tooltip } from 'antd';
+import { Tooltip } from 'antd-v5';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { infoMap } from './const';
 

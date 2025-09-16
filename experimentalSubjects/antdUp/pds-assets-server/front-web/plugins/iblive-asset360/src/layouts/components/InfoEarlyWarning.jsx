@@ -7,7 +7,7 @@
  */
 
 import InfoEarlyWarningIcon from '@asset360/assets/base/infoEarlyWarningIcon.png';
-import { Carousel } from 'antd';
+import { Carousel } from 'antd-v5';
 import { getRealPath } from 'iblive-base';
 import { history } from 'umi';
 import styles from './components.less';

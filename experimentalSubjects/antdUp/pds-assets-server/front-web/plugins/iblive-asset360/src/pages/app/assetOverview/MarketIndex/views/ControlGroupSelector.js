@@ -7,7 +7,7 @@
  */
 import { CheckCircleFilled, PlusOutlined } from '@ant-design/icons';
 import CustomTree from '@asset360/components/CustomTree';
-import { Button, Col, Dropdown, Input, message, Row, Space } from 'antd';
+import { Button, Col, Dropdown, Input, message, Row, Space } from 'antd-v5';
 import { useMemo, useState } from 'react';
 import styles from '../index.less';
 

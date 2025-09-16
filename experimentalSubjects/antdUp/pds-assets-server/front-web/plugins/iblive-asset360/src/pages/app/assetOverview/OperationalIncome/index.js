@@ -9,7 +9,7 @@ import Icon from '@ant-design/icons';
 import { ReactComponent as shishichicangIcon } from '@asset360/assets/app/assetOverview/shishichicangIcon.svg';
 import { ReactComponent as zuhegailanIcon } from '@asset360/assets/app/assetOverview/zuhegailanIcon.svg';
 import DateRangeWithQuickSelect from '@asset360/components/DateRangeWithQuickSelect';
-import { Empty, Tabs } from 'antd';
+import { Empty, Tabs } from 'antd-v5';
 import { CustomTabs } from 'iblive-base';
 import moment from 'moment';
 import { useRef, useState } from 'react';

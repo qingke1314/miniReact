@@ -9,7 +9,7 @@
 import { PRODUCT, MANAGER, TAG } from '../const';
 import { invokeAPIIndex } from '@asset360/apis/api';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, Form, Input, Radio, Row, Space, Button, message } from 'antd';
+import { Col, Form, Input, Radio, Row, Space, Button, message } from 'antd-v5';
 import {
   desensitization,
   getRealPath,

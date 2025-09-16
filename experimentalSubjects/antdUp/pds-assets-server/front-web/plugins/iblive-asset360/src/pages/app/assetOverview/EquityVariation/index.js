@@ -6,7 +6,16 @@
  * @LastEditors: liuxinmei liuxinmei@apexsoft.com.cn
  */
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { Badge, Button, Calendar, Col, Row, Select, Space, Tabs } from 'antd';
+import {
+  Badge,
+  Button,
+  Calendar,
+  Col,
+  Row,
+  Select,
+  Space,
+  Tabs,
+} from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import moment from 'moment';
 import { useRef, useState } from 'react';

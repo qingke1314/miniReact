@@ -27,10 +27,8 @@
       .privateAntd-tabs-tab-active {
         background: var(--tab-cursor-color);
       }
-      .ant-tabs-tab-active
-      .ant-tabs-tab-btn,
-      .privateAntd-tabs-tab-active
-      .privateAntd-tabs-tab-btn {
+      .ant-tabs-tab-active .ant-tabs-tab-btn,
+      .privateAntd-tabs-tab-active .privateAntd-tabs-tab-btn {
         color: #fff;
         .tab_icon svg {
           color: #fff;
@@ -61,51 +59,51 @@
 .small_size_style {
   :global {
     //表单样式
-    .@{ant-main-prefix-cls}-form {
+    .privateAntd-form {
       label {
         font-size: var(--small-text-size) !important;
       }
-      .@{ant-main-prefix-cls}-form-item {
+      .privateAntd-form-item {
         margin-bottom: 10px;
         span {
           font-size: var(--small-text-size) !important;
         }
       }
-      .@{ant-main-prefix-cls}-form-item-required {
+      .privateAntd-form-item-required {
         font-size: var(--small-text-size) !important;
       }
     }
 
     //表格样式
-    .@{ant-main-prefix-cls}-table-wrapper {
-      .@{ant-main-prefix-cls}-table-thead {
-        font-size: var(--small-text-size) !important;
-        .@{ant-main-prefix-cls}-table-cell {
-          padding: 0 8px !important;
-        }
-      }
-
-      .@{ant-main-prefix-cls}-table-body {
+    .privateAntd-table-wrapper {
+      .privateAntd-table-thead {
         font-size: var(--small-text-size) !important;
         .privateAntd-table-cell {
           padding: 0 8px !important;
         }
       }
-      .@{ant-main-prefix-cls}-table-tbody {
+
+      .privateAntd-table-body {
         font-size: var(--small-text-size) !important;
-        .@{ant-main-prefix-cls}-table-cell {
+        .privateAntd-table-cell {
+          padding: 0 8px !important;
+        }
+      }
+      .privateAntd-table-tbody {
+        font-size: var(--small-text-size) !important;
+        .privateAntd-table-cell {
           padding: 0 8px !important;
         }
       }
 
-      .@{ant-main-prefix-cls}-pagination {
+      .privateAntd-pagination {
         font-size: 12px !important;
       }
     }
 
     //树形控件样式
-    .@{ant-main-prefix-cls}-tree-list {
-      .@{ant-main-prefix-cls}-tree-node-content-wrapper {
+    .privateAntd-tree-list {
+      .privateAntd-tree-node-content-wrapper {
         padding: 1px !important;
         font-size: 13px !important;
       }
@@ -118,39 +116,39 @@
     }
 
     //文本框样式
-    .@{ant-main-prefix-cls}-input-group-wrapper {
+    .privateAntd-input-group-wrapper {
       font-size: 13px !important;
 
-      .@{ant-main-prefix-cls}-input {
+      .privateAntd-input {
         font-size: 13px !important;
         height: 24px !important;
       }
-      .@{ant-main-prefix-cls}-input-group-addon {
+      .privateAntd-input-group-addon {
         font-size: 13px !important;
       }
     }
-    .@{ant-main-prefix-cls}-input {
+    .privateAntd-input {
       font-size: 13px !important;
       height: 24px !important;
     }
 
     //btn按钮样式
-    .@{ant-main-prefix-cls}-btn {
+    .privateAntd-btn {
       font-size: 13px !important;
     }
 
     //Radio样式
-    .@{ant-main-prefix-cls}-radio-group {
-      .@{ant-main-prefix-cls}-radio-wrapper {
+    .privateAntd-radio-group {
+      .privateAntd-radio-wrapper {
         font-size: 13px !important;
       }
     }
 
     //弹窗样式
-    .@{ant-main-prefix-cls}-modal-content {
-      .@{ant-main-prefix-cls}-modal-header {
+    .privateAntd-modal-content {
+      .privateAntd-modal-header {
         padding: 10px 17px !important;
-        .@{ant-main-prefix-cls}-modal-title {
+        .privateAntd-modal-title {
           font-size: 15px !important;
         }
         .anticon-close {

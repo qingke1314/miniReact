@@ -1,4 +1,4 @@
-import { Button, Space } from 'antd';
+import { Button, Space } from 'antd-v5';
 
 export default ({
   cron,

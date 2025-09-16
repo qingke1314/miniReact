@@ -8,7 +8,7 @@
  */
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Select, Space } from 'antd';
+import { Select, Space } from 'antd-v5';
 import { getFormatDate, moneyFormat } from 'iblive-base';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';

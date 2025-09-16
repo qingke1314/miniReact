@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-11-12 09:17:23
  * @Description:
  */
-import { Steps } from 'antd';
+import { Steps } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import styles from './index.less';
 

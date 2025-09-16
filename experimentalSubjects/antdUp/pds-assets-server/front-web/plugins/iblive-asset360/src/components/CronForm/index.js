@@ -1,4 +1,4 @@
-import { Button, Col, Modal, Row, Tabs } from 'antd';
+import { Button, Col, Modal, Row, Tabs } from 'antd-v5';
 import { useState } from 'react';
 import { cormToForm } from './utils/handleFastSettingChange';
 import FastSettingPane from './views/FastSettingPane';

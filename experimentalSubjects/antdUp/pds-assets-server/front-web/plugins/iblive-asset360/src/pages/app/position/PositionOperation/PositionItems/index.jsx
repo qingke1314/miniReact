@@ -28,7 +28,7 @@ import {
   Tabs,
   TreeSelect,
   Typography,
-} from 'antd';
+} from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';

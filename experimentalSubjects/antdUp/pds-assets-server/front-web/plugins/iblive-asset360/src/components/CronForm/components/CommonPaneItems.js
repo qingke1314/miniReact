@@ -1,4 +1,4 @@
-import { Radio, Space } from 'antd';
+import { Radio, Space } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import InputFormInterval from './InputFormInterval';
 import InputFromCycle from './InputFromCycle';

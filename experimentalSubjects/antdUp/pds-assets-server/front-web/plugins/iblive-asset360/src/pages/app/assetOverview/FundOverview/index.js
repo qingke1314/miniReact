@@ -13,7 +13,7 @@
  * @Description:
  */
 import CustomAnchor from '@asset360/components/CustomAnchor';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { useId, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';

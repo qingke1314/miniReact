@@ -6,7 +6,7 @@
  * @Description:
  */
 import { moneyFormat } from 'iblive-base';
-import { Col, Divider, Row, Skeleton, Space } from 'antd';
+import { Col, Divider, Row, Skeleton, Space } from 'antd-v5';
 import StatisticalInformation from '../components/StatisticalInformation';
 import styles from '../index.less';
 import LineChart from './LineChart';
@@ -16,7 +16,9 @@ const CompanySummary = ({ companyData, loading }) => {
 
   // 从数组中获取不同类型的数据
   const getFundTypeData = (code) => {
-    const item = companyData?.fundTypeNumbsStat?.find(item => item.code === code);
+    const item = companyData?.fundTypeNumbsStat?.find(
+      (item) => item.code === code,
+    );
     return item ? item.num : 0;
   };
 

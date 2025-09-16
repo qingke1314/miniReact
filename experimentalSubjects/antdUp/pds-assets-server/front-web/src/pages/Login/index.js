@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-18 09:42:47
  * @Description: desc
  */
-import { message, Spin } from 'antd';
+import { message, Spin } from 'antd-v5';
 import { setUserInfo, getRealPath } from 'iblive-base';
 // import { Routes } from 'iblive-oms';
 import useMount from 'react-use/esm/useMount';

@@ -1,6 +1,6 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import { useRequest } from 'ahooks';
-import { Badge, Col, Row, Skeleton, Space, Spin } from 'antd';
+import { Badge, Col, Row, Skeleton, Space, Spin } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { isNumber } from 'lodash';
 import moment from 'moment';

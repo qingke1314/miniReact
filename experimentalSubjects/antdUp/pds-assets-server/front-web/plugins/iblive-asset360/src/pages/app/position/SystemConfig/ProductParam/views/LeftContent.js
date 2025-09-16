@@ -6,7 +6,7 @@
  * @LastEditors: guoxuan guoxuan@apexsoft.com.cn
  */
 import CustomTree from '@asset360/components/CustomTree';
-import { Input, Space } from 'antd';
+import { Input, Space } from 'antd-v5';
 import { filterTree } from 'iblive-base';
 import { useMemo, useState } from 'react';
 import styles from '../index.less';

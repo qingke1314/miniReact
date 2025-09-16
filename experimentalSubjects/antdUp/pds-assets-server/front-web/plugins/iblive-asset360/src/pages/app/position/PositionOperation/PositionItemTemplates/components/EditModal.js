@@ -9,7 +9,7 @@
 import { addTemplate, instAddTemplate } from '@asset360/apis/positionTemplate';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Col, Form, Input, message, Row, Select } from 'antd';
+import { Col, Form, Input, message, Row, Select } from 'antd-v5';
 
 export default ({ callback, visible, onCancel }) => {
   const [form] = Form.useForm();

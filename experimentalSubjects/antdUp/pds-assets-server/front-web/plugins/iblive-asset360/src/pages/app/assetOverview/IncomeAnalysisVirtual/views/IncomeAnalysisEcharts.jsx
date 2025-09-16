@@ -1,7 +1,7 @@
 // import { useModel } from 'umi';
 import { executeApi } from '@asset360/apis/appCommon';
 import { useSize } from 'ahooks';
-import { Empty, Radio, Spin } from 'antd';
+import { Empty, Radio, Spin } from 'antd-v5';
 import { TreemapChart } from 'echarts/charts';
 import { GridComponent, TooltipComponent } from 'echarts/components';
 import * as echarts from 'echarts/core';

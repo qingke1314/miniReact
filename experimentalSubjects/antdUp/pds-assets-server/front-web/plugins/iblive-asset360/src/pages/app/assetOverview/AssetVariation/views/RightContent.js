@@ -8,7 +8,7 @@
  */
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, DatePicker, Form, Radio, Row } from 'antd';
+import { Col, DatePicker, Form, Radio, Row } from 'antd-v5';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';

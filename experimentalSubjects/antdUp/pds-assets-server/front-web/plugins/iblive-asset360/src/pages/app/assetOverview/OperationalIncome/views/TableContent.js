@@ -1,5 +1,5 @@
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Checkbox, Col, Form, Input, Radio, Row, Space } from 'antd';
+import { Checkbox, Col, Form, Input, Radio, Row, Space } from 'antd-v5';
 import { getFormatDate, moneyFormat } from 'iblive-base';
 import { debounce } from 'lodash';
 import moment from 'moment';

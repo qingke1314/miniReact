@@ -13,7 +13,7 @@ import {
 import CronForm from '@asset360/components/CronForm';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Col, Form, Input, InputNumber, message, Radio, Row } from 'antd';
+import { Col, Form, Input, InputNumber, message, Radio, Row } from 'antd-v5';
 import { useEffect, useState } from 'react';
 
 export default ({ callback, visible, onCancel, info = {} }) => {

@@ -1,6 +1,6 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, Row, Table } from 'antd';
+import { Col, Row, Table } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

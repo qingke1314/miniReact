@@ -7,7 +7,7 @@
  */
 import CustomAnchor from '@asset360/components/CustomAnchor';
 import ProductRecordHistorySelector from '@asset360/components/ProductRecordHistorySelector';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { useRef, useState } from 'react';
 import { setProductCode } from '../../../../store/assetLayoutSlice';

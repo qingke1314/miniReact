@@ -6,7 +6,7 @@
  * @Description:
  */
 import { executeApi } from '@asset360/apis/appCommon';
-import { Select } from 'antd';
+import { Select } from 'antd-v5';
 import { debounce } from 'lodash';
 import moment from 'moment';
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';

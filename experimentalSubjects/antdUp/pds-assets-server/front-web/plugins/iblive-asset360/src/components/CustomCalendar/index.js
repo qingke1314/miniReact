@@ -6,8 +6,8 @@
  * @Description:
  */
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { Button, Calendar, Col, Row, Select, Space } from 'antd';
-import zhCN from 'antd/es/locale/zh_CN';
+import { Button, Calendar, Col, Row, Select, Space } from 'antd-v5';
+import zhCN from 'antd-v5/es/locale/zh_CN';
 import moment from 'moment';
 import styles from './index.less';
 

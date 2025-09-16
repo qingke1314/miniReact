@@ -20,7 +20,7 @@ import { queryAllRiskGroupList } from '@asset360/apis/riskGroup';
 import { queryByProductCode } from '@asset360/apis/riskItem';
 import OverviewTable from '@asset360/components/OverviewTable';
 import OverviewTabs from '@asset360/components/OverviewTabs';
-import { Badge, Descriptions, Empty, List, Space, Tabs, Tag } from 'antd';
+import { Badge, Descriptions, Empty, List, Space, Tabs, Tag } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';

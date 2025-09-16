@@ -1,5 +1,5 @@
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Descriptions, Row, Spin } from 'antd';
+import { Col, Descriptions, Row, Spin } from 'antd-v5';
 import { LineChart } from 'echarts/charts';
 import {
   DataZoomComponent,

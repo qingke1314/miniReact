@@ -1,4 +1,4 @@
-import { Badge, Space } from 'antd';
+import { Badge, Space } from 'antd-v5';
 import { isNil } from 'lodash';
 import styles from './index.less';
 

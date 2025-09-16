@@ -8,7 +8,7 @@
  */
 
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Radio, Row } from 'antd';
+import { Col, Radio, Row } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import BaseMsg from './BaseMsg';
 import StockKLineChart from './StockKLineChart';

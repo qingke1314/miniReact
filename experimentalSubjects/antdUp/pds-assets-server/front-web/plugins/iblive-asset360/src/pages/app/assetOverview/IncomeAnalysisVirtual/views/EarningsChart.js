@@ -1,6 +1,6 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import { useSize } from 'ahooks';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import { BarChart, LineChart } from 'echarts/charts';
 import {
   GridComponent,

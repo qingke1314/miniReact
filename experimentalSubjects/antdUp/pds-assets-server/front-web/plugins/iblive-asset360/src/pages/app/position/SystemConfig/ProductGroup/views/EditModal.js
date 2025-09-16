@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-19 09:48:34
  * @Description:
  */
-import { Form, Input, message } from 'antd';
+import { Form, Input, message } from 'antd-v5';
 import { useEffect } from 'react';
 import {
   saveFundGroup,

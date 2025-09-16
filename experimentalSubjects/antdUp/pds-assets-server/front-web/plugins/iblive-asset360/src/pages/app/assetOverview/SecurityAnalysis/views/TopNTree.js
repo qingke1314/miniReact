@@ -12,7 +12,7 @@ import { executeApi } from '@asset360/apis/appCommon';
 import CustomTree from '@asset360/components/CustomTree';
 import SearchRecordHistorySelector from '@asset360/components/SearchRecordHistorySelector';
 import { history, useLocation } from '@umijs/max';
-import { Radio, Row, Space, Spin } from 'antd';
+import { Radio, Row, Space, Spin } from 'antd-v5';
 import { moneyFormat, useGetRequestCancelOperation } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../index.less';

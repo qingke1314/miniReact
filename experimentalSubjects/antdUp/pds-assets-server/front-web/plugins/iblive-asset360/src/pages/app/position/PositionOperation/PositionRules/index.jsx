@@ -22,7 +22,7 @@ import {
 } from '@asset360/apis/positionTemplate';
 import save from '@asset360/assets/app/position/save.svg';
 import saveTemple from '@asset360/assets/app/position/saveTemple.svg';
-import { Col, message, Popconfirm, Row, Spin, Switch, Tabs } from 'antd';
+import { Col, message, Popconfirm, Row, Spin, Switch, Tabs } from 'antd-v5';
 import { desensitization } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import InstCal from '../../components/InstCal';

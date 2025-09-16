@@ -11,10 +11,11 @@
   }
 
   :global {
-    tr.@{ant-main-prefix-cls}-table-expanded-row > td, tr.@{ant-main-prefix-cls}-table-expanded-row:hover > td {
+    tr.privateAntd-table-expanded-row > td,
+    tr.privateAntd-table-expanded-row:hover > td {
       background: transparent;
     }
-    .@{ant-main-prefix-cls}-table-cell-row-hover {
+    .privateAntd-table-cell-row-hover {
       background: var(--selected-row-color) !important;
     }
     .ant-table-pagination {
@@ -41,8 +42,7 @@
       }
     }
 
-    .ant-table-thead
-    th.ant-table-column-has-sorters:hover {
+    .ant-table-thead th.ant-table-column-has-sorters:hover {
       background-color: #ededed !important;
     }
 
@@ -70,21 +70,21 @@
     }
 
     .ant-table.ant-table-bordered.ant-table-small
-    > .ant-table-container
-    > .ant-table-content
-    > table
-    > tbody
-    > tr
-    > td
-    > .ant-table-expanded-row-fixed,
+      > .ant-table-container
+      > .ant-table-content
+      > table
+      > tbody
+      > tr
+      > td
+      > .ant-table-expanded-row-fixed,
     .ant-table.ant-table-bordered.ant-table-small
-    > .ant-table-container
-    > .ant-table-body
-    > table
-    > tbody
-    > tr
-    > td
-    > .ant-table-expanded-row-fixed {
+      > .ant-table-container
+      > .ant-table-body
+      > table
+      > tbody
+      > tr
+      > td
+      > .ant-table-expanded-row-fixed {
       margin: -16px -16px;
     }
   }
@@ -133,8 +133,7 @@
       }
     }
 
-    .ant-tabs-tab-active
-    .ant-tabs-tab-btn {
+    .ant-tabs-tab-active .ant-tabs-tab-btn {
       color: #186df5;
     }
 
@@ -156,7 +155,7 @@
     font-size: 16px;
   }
 
-  .@{ant-main-prefix-cls}-table-expanded-row-fixed {
+  .privateAntd-table-expanded-row-fixed {
     background: var(--background-color);
   }
 }

@@ -4,7 +4,7 @@ import {
   querySnapshotRecord,
 } from '@asset360/apis/standardPosition';
 import CustomModal from '@asset360/components/CustomModal';
-import { Button, DatePicker, Form } from 'antd';
+import { Button, DatePicker, Form } from 'antd-v5';
 import { CustomTableWithYScroll, moneyFormat, requestUtils } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

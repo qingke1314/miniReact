@@ -6,7 +6,7 @@
  * @Description:
  */
 import { moneyFormat } from 'iblive-base';
-import { Space } from 'antd';
+import { Space } from 'antd-v5';
 import styles from '../index.less';
 
 export default ({

@@ -22,7 +22,7 @@ import {
   Select,
   Switch,
   TreeSelect,
-} from 'antd';
+} from 'antd-v5';
 import { securityUtils } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import { queryGroupTree } from '../../../../../../apis/positionFundGroup';

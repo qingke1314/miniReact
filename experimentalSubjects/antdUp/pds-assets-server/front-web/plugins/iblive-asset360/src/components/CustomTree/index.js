@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-01-08 11:48:59
  * @Description: desc
  */
-import { Tree } from 'antd';
+import { Tree } from 'antd-v5';
 import styles from './index.less';
 
 const CustomTree = ({ className, ...config }) => {

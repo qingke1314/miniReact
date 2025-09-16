@@ -1,6 +1,6 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Row } from 'antd';
+import { Row } from 'antd-v5';
 import { desensitization, moneyFormat } from 'iblive-base';
 
 import { useEffect, useState } from 'react';

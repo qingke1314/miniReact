@@ -1,9 +1,12 @@
-@import './font.css';
 @import './var.less';
-@import '~antd/dist/antd.less';
+/* @import '~antd/dist/antd.less';*/
 @import './editor.less';
 @import 'iblive-base/dist/styles/ReactContexify.css';
 
+@font-face {
+  font-family: 'myFont';
+  src: url(./assets/font/NotoSansSC-Light.otf);
+}
 body div,
 body h1,
 body h2,
@@ -21,8 +24,13 @@ body p {
   padding-left: 0;
 }
 body {
+  // background-color: red;
+  overflow: hidden;
+  height: 100vh;
   font-size: var(--default-text-size);
-  font-family: BlinkMacSystemFont, 'myFont' !important;
+  font-family: 'myFont' !important;
+  margin: 0 !important;
+  padding: 0;
 }
 
 // 时间选择-快捷按钮样式
@@ -41,24 +49,24 @@ body {
   color: var(--primary-color) !important;
 }
 
-.@{ant-main-prefix-cls}-notification-notice-close {
+.privateAntd-notification-notice-close {
   color: var(--close-button-color) !important;
 }
 
-.@{ant-main-prefix-cls}-drawer-content {
+.privateAntd-drawer-content {
   background: var(--background-color) !important;
 }
 
-.@{ant-main-prefix-cls}-input-clear-icon {
+.privateAntd-input-clear-icon {
   color: var(--clear-button-color) !important;
 }
 
-.@{ant-main-prefix-cls}-select-clear {
+.privateAntd-select-clear {
   color: var(--clear-button-color) !important;
 }
 
-.@{ant-main-prefix-cls}-select-tree
-  .@{ant-main-prefix-cls}-select-tree-node-content-wrapper.@{ant-main-prefix-cls}-select-tree-node-selected {
+.privateAntd-select-tree
+  .privateAntd-select-tree-node-content-wrapper.privateAntd-select-tree-node-selected {
   background-color: var(--navigation-menu-selected-background-color) !important;
 }
 

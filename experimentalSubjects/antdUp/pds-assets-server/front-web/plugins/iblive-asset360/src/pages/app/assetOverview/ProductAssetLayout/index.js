@@ -16,7 +16,7 @@ import { executeApi } from '@asset360/apis/appCommon';
 import ProductRecordHistorySelector from '@asset360/components/IndicatorComponents/ProductRecordHistorySelector';
 import { history, Outlet, useLocation } from '@umijs/max';
 import { useRequest } from 'ahooks';
-import { Empty, Row, Space } from 'antd';
+import { Empty, Row, Space } from 'antd-v5';
 import {
   configUtils,
   CustomTabs,

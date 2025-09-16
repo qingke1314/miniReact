@@ -1,4 +1,4 @@
-import { InputNumber, Space } from 'antd';
+import { InputNumber, Space } from 'antd-v5';
 import React from 'react';
 
 function InputFromCycle({

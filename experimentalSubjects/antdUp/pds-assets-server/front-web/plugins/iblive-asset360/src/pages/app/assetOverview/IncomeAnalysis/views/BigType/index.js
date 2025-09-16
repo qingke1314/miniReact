@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { formatNumberWithUnit } from '../../const';
 import styles from './index.less';
 

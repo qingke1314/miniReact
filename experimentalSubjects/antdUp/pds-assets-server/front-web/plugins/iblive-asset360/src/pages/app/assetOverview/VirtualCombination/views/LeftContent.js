@@ -9,7 +9,7 @@
 import { getVirtualList } from '@asset360/apis/asset360';
 import CustomModal from '@asset360/components/CustomModal';
 import CustomTree from '@asset360/components/CustomTree';
-import { Button, Col, Form, Row, Spin, Tree } from 'antd';
+import { Button, Col, Form, Row, Spin, Tree } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import styles from '../index.less';

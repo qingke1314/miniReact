@@ -1,6 +1,6 @@
 import { DoubleRightOutlined } from '@ant-design/icons';
 import { useSize } from 'ahooks';
-import { Empty } from 'antd';
+import { Empty } from 'antd-v5';
 import { BarChart } from 'echarts/charts';
 import {
   GridComponent,

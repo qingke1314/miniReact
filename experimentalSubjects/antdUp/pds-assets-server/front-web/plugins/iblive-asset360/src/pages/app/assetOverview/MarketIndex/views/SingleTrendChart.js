@@ -9,7 +9,7 @@
 import { moneyFormat, generateColor } from 'iblive-base';
 import { CaretUpOutlined } from '@ant-design/icons';
 import { useSize } from 'ahooks';
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Space } from 'antd-v5';
 import { LineChart } from 'echarts/charts';
 import {
   DataZoomComponent,

@@ -1,5 +1,5 @@
 // PKProgressBar.jsx
-import { Progress } from 'antd';
+import { Progress } from 'antd-v5';
 import React from 'react';
 import styles from './index.less'; // 引入新的CSS文件
 

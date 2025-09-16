@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-19 09:55:15
  * @Description:
  */
-import { Button, Col, Empty, Form, Input, Modal, Row, Space } from 'antd';
+import { Button, Col, Empty, Form, Input, Modal, Row, Space } from 'antd-v5';
 import {
   CustomTableWithYScroll,
   desensitization,

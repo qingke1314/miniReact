@@ -1,7 +1,7 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import CustomTitle from '@asset360/components/CustomTitle';
 import DateRangeWithQuickSelect from '@asset360/components/DateRangeWithQuickSelect';
-import { Col, Row, Space, Spin } from 'antd';
+import { Col, Row, Space, Spin } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { isArray, isString } from 'lodash';
 import moment from 'moment';

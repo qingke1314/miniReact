@@ -9,7 +9,7 @@
 
 import { DownOutlined } from '@ant-design/icons';
 import CustomTree from '@asset360/components/CustomTree';
-import { Row, Space } from 'antd';
+import { Row, Space } from 'antd-v5';
 import { convertTreeMenu, moneyFormat } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import styles from '../index.less';

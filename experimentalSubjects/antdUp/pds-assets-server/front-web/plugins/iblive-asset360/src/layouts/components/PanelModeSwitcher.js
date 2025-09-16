@@ -6,7 +6,7 @@
  * @Description: 系统模块切换组件
  */
 import { DesktopOutlined } from '@ant-design/icons';
-import { Dropdown, Menu } from 'antd';
+import { Dropdown, Menu } from 'antd-v5';
 import { configUtils, getUserInfo } from 'iblive-base';
 import { useMemo } from 'react';
 import { history, useLocation, useModel } from 'umi';

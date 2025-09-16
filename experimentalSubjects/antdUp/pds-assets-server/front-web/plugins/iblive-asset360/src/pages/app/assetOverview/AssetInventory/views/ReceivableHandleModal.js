@@ -8,7 +8,7 @@
  */
 import CustomModal from '@asset360/components/CustomModal';
 import PositionTable from '@asset360/components/PositionTable';
-import { Button } from 'antd';
+import { Button } from 'antd-v5';
 import { getFormatDate, moneyFormat } from 'iblive-base';
 import { useEffect, useState } from 'react';
 

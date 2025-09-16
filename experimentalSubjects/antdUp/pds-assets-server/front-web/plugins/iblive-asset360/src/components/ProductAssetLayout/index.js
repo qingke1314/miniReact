@@ -2,7 +2,7 @@ import { executeApi } from '@asset360/apis/appCommon';
 import ProductRecordHistorySelector from '@asset360/components/IndicatorComponents/ProductRecordHistorySelector';
 import { history, useLocation } from '@umijs/max'; //Outlet
 import { useRequest } from 'ahooks';
-import { Empty, Row, Space } from 'antd';
+import { Empty, Row, Space } from 'antd-v5';
 import {
   configUtils,
   getRealPath,
@@ -104,8 +104,7 @@ const ProductAssetLayout = ({ children, needAssetType = false }) => {
       });
     } else {
       // localStorage缓存近期选择的前十条
-      const localHistory =
-        productSelectRef.current.getLocalStorageSearchRecords();
+      const localHistory = productSelectRef.current.getLocalStorageSearchRecords();
       dispatch(setProductCode(localHistory[0]?.value));
     }
     return () => {

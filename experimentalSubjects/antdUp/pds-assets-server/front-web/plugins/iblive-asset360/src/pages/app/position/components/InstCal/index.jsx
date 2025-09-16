@@ -8,7 +8,16 @@
  */
 import { CloseOutlined, FormOutlined } from '@ant-design/icons';
 import calculator from '@asset360/assets/app/position/calculator.svg';
-import { Button, Col, Divider, Input, Menu, message, Modal, Row } from 'antd';
+import {
+  Button,
+  Col,
+  Divider,
+  Input,
+  Menu,
+  message,
+  Modal,
+  Row,
+} from 'antd-v5';
 import { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import ConditionModal from './components/ConditionModal';

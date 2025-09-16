@@ -7,7 +7,7 @@
  */
 
 import CustomModal from '@asset360/components/CustomModal';
-import { Descriptions, Tag } from 'antd';
+import { Descriptions, Tag } from 'antd-v5';
 import moment from 'moment';
 
 const DetailModal = ({ visible, onCancel, info = {}, columns, array }) => {

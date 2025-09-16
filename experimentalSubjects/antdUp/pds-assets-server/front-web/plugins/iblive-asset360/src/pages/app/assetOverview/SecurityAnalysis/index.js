@@ -1,5 +1,5 @@
 import CustomAnchor from '@asset360/components/CustomAnchor';
-import { Col, Empty, Row } from 'antd';
+import { Col, Empty, Row } from 'antd-v5';
 import { ResizableContainers, useGetHeight } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import styles from './index.less';

@@ -2,7 +2,7 @@ import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
 import { history } from '@umijs/max';
 import { useRequest } from 'ahooks';
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Space } from 'antd-v5';
 import { getRealPath, getUserInfo, moneyFormat } from 'iblive-base';
 import { sumBy } from 'lodash';
 import moment from 'moment';
@@ -69,11 +69,7 @@ export default function BondPositionTable({ productCode }) {
       render: (text) => moneyFormat({ num: text, decimal: 0 }),
     },
   ];
-  const {
-    data: info,
-    run: getInfo,
-    cancel: cancelGetInfo,
-  } = useRequest(
+  const { data: info, run: getInfo, cancel: cancelGetInfo } = useRequest(
     async () => {
       const res = await executeApi({
         serviceId: 'DD_API_MUTUAL_BOND_MARKET_VALUE_TOP',

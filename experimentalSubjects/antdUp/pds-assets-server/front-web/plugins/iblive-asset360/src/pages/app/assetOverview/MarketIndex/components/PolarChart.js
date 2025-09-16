@@ -5,9 +5,9 @@
  * @LastEditTime: 2025-02-14 11:14:29
  * @Description:
  */
-import { moneyFormat,generateColor } from 'iblive-base';
+import { moneyFormat, generateColor } from 'iblive-base';
 import { useSize } from 'ahooks';
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Space } from 'antd-v5';
 import { BarChart } from 'echarts/charts';
 import {
   LegendComponent,

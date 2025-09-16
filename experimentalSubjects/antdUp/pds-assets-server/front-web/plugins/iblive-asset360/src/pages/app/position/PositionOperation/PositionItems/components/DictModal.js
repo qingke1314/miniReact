@@ -9,7 +9,7 @@
 import { savePositionDict } from '@asset360/apis/positionDict';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Col, Form, Input, message, Row, Select, TreeSelect } from 'antd';
+import { Col, Form, Input, message, Row, Select, TreeSelect } from 'antd-v5';
 export default ({ visible, onCancel, callback, types }) => {
   const [form] = Form.useForm();
 

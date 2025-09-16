@@ -9,7 +9,7 @@
 import { getTradeDetail, LockCashInfo } from '@asset360/apis/position';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Col, DatePicker, Form, Input, message, Row } from 'antd';
+import { Col, DatePicker, Form, Input, message, Row } from 'antd-v5';
 import { desensitization, securityUtils } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

@@ -8,7 +8,7 @@
 /*
   全局统一的按钮组（删除、关闭、保存），带有按钮loading
 */
-import { Button, Popconfirm, Space } from 'antd';
+import { Button, Popconfirm, Space } from 'antd-v5';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 

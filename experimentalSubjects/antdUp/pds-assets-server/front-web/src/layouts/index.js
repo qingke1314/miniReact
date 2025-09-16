@@ -5,10 +5,10 @@
  * @LastEditTime: 2025-02-25 09:49:54
  * @Description:
  */
-import { Button, ConfigProvider } from 'antd';
-import zhCN from 'antd/lib/locale/zh_CN';
+import { Button, ConfigProvider } from 'antd-v5';
+import zhCN from 'antd-v5/lib/locale/zh_CN';
 import 'moment/locale/zh-cn';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { Outlet, useModel } from 'umi';
 import { store } from '../../plugins/iblive-asset360/src/store';

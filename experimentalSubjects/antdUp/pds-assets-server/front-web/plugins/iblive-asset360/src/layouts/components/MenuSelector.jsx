@@ -8,7 +8,7 @@
 
 import { getUserInfo } from 'iblive-base';
 import { SearchOutlined } from '@ant-design/icons';
-import { Select, Space } from 'antd';
+import { Select, Space } from 'antd-v5';
 import { flattenDeep } from 'lodash';
 import { useEffect, useState } from 'react';
 import { history, useAppData } from 'umi';

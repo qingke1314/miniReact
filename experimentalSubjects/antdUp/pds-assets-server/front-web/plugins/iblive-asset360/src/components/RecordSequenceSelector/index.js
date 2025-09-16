@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-26 11:03:23
  * @Description:
  */
-import { Select } from 'antd';
+import { Select } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import styles from './index.less';
 

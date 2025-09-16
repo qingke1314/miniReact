@@ -1,10 +1,3 @@
-/*
- * @Author: wenyiqian
- * @Date: 2025-01-09 09:07:02
- * @LastEditors: wenyiqian
- * @LastEditTime: 2025-02-13 19:57:56
- * @Description: desc
- */
 const alias = require('@rollup/plugin-alias');
 const url = require('@rollup/plugin-url');
 import copy from 'rollup-plugin-copy';

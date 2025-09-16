@@ -8,7 +8,7 @@
  */
 
 import { SettingOutlined } from '@ant-design/icons';
-import { Button, Popover, Space, Tree } from 'antd';
+import { Button, Popover, Space, Tree } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import styles from '../../index.less';
 
@@ -61,23 +61,17 @@ const TableColumnFilter = ({
       item === node.key && (nodeIndex = index);
     });
 
-    if(dragIndex > nodeIndex){
+    if (dragIndex > nodeIndex) {
       nodeIndex += 1;
     }
 
     // 删除并插入节点
-    const draggedIndex = draggTreeData.splice(
-      dragIndex,
-      1,
-    )[0];
+    const draggedIndex = draggTreeData.splice(dragIndex, 1)[0];
     draggTreeData.splice(nodeIndex, 0, draggedIndex);
     setDraggTreeData([...draggTreeData]);
 
     //表格树更新
-    const treeDataTemp = treeData[0].children.splice(
-      dragIndex,
-      1,
-    )[0];
+    const treeDataTemp = treeData[0].children.splice(dragIndex, 1)[0];
     treeData[0].children.splice(nodeIndex, 0, treeDataTemp);
     setTreeData([...treeData]);
   };

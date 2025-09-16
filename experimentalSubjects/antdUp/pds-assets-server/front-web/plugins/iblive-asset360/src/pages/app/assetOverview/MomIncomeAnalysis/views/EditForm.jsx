@@ -12,7 +12,7 @@ import {
   Switch,
   TimePicker,
   TreeSelect,
-} from 'antd';
+} from 'antd-v5';
 import { Fragment, memo } from 'react';
 
 const FormItem = Form.Item;

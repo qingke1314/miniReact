@@ -19,14 +19,14 @@
     "pnpm": ">=8"
   },
   "dependencies": {
-    "@ant-design/icons": "~4.7.0",
-    "@ant-design/pro-layout": "~6.5.0",
-    "@ant-design/pro-table": "~2.76.4",
+    "@ant-design/icons": "~6.0.2",
+    "@ant-design/pro-components": "^2.8.10",
     "@reduxjs/toolkit": "^2.5.1",
     "@umijs/max": "4.0.26",
     "@wangeditor/editor-for-react": "^1.0.6",
     "ahooks": "~3.4.1",
     "antd": "5.27.3",
+    "antd-v5": "npm:antd@^5.27.3",
     "axios": "~0.27.2",
     "click-to-react-component": "1.0.8",
     "crypto-js": "~4.1.1",

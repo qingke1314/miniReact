@@ -22,7 +22,7 @@ import cashMonitoringIcon from '@asset360/assets/app/position/cashMonitoringIcon
 import customFundDetailsIcon from '@asset360/assets/app/position/customFundDetailsIcon.png';
 import positionDetailsIcon from '@asset360/assets/app/position/positionDetailsIcon.png';
 import { useLocation } from '@umijs/max';
-import { Button, Col, DatePicker, message, Row, Select, Tabs } from 'antd';
+import { Button, Col, DatePicker, message, Row, Select, Tabs } from 'antd-v5';
 import { getUserInfo, requestUtils } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';

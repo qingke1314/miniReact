@@ -23,7 +23,7 @@ import {
   Select,
   Space,
   Typography,
-} from 'antd';
+} from 'antd-v5';
 import { useEffect, useState } from 'react';
 import PositionTable from '../../../components/PositionTable';
 import DictModal from './DictModal';

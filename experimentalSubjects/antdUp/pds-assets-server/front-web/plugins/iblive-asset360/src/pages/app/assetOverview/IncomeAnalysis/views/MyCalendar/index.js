@@ -1,6 +1,6 @@
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { executeApi } from '@asset360/apis/appCommon';
-import { Button, Calendar, Col, Radio, Row, Select } from 'antd';
+import { Button, Calendar, Col, Radio, Row, Select } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
@@ -158,7 +158,7 @@ const App = ({
     setCalendarValue(newValue);
   };
   const onPanelChange = (newValue, mode) => {
-    // When the panel is changed by antd, we update our state
+    // When the panel is changed by antd-v5, we update our state
     setCalendarValue(newValue);
     setViewMode(mode);
   };
@@ -312,7 +312,7 @@ const App = ({
       <Calendar
         value={calendarValue}
         onSelect={onSelect}
-        // Let antd calendar think it's in 'year' mode when we show our decade view
+        // Let antd-v5 calendar think it's in 'year' mode when we show our decade view
         mode={viewMode === DECADE ? 'year' : viewMode}
         onPanelChange={onPanelChange}
         dateCellRender={dateCellRender}

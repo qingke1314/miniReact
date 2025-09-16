@@ -8,7 +8,7 @@
  */
 
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { useEffect, useState } from 'react';
 const ZqItem = ({ title, value }) => (

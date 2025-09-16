@@ -1,5 +1,5 @@
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Progress, Row, Skeleton, Space } from 'antd';
+import { Col, Progress, Row, Skeleton, Space } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';

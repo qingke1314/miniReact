@@ -11,7 +11,7 @@ import CustomInputNumber from '@asset360/components/CustomInputNumber';
 import CustomModal from '@asset360/components/CustomModal';
 import CustomTree from '@asset360/components/CustomTree';
 import QtyInput from '@asset360/components/QtyInput';
-import { Button, Form, message, Popconfirm } from 'antd';
+import { Button, Form, message, Popconfirm } from 'antd-v5';
 import {
   CustomForm,
   CustomSecSelector,

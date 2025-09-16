@@ -8,7 +8,7 @@
  */
 import { moneyFormat } from 'iblive-base';
 import { CloseOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
+import { Button } from 'antd-v5';
 import { useEffect } from 'react';
 import NumberCel from '../../../components/NumberCel';
 import PositionTable from '../../../components/PositionTable';

@@ -1,4 +1,4 @@
-import { Form, Select, TimePicker } from 'antd';
+import { Form, Select, TimePicker } from 'antd-v5';
 import { useEffect } from 'react';
 import { dateAry, dayAry } from '../const';
 import { cormToForm, formToCron } from '../utils/handleFastSettingChange';

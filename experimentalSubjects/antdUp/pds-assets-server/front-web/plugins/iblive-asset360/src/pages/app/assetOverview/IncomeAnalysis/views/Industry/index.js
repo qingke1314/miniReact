@@ -1,4 +1,4 @@
-import { Tag } from 'antd';
+import { Tag } from 'antd-v5';
 const Industry = ({
   value,
   onChange,

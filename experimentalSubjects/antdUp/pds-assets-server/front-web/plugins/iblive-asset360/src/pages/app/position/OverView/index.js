@@ -11,7 +11,16 @@ import CustomCard from '@asset360/components/CustomCard';
 import OperationColunm from '@asset360/components/OperationColunm';
 import { history } from '@umijs/max';
 import { useGetState } from 'ahooks';
-import { Button, Col, DatePicker, Form, Input, Row, Space, Tabs } from 'antd';
+import {
+  Button,
+  Col,
+  DatePicker,
+  Form,
+  Input,
+  Row,
+  Space,
+  Tabs,
+} from 'antd-v5';
 import {
   desensitization,
   moneyFormat,

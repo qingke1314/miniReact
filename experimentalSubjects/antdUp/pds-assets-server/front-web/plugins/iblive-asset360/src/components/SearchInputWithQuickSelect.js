@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-11-14 14:41:22
  * @Description:
  */
-import { Dropdown, Input, Menu } from 'antd';
+import { Dropdown, Input, Menu } from 'antd-v5';
 import { forwardRef, useImperativeHandle } from 'react';
 
 export default forwardRef(

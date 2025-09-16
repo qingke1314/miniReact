@@ -10,7 +10,6 @@ import { defineConfig } from 'umi';
 // @ts-ignore
 import proxy from './proxy';
 import routes from './routes';
-import theme from './theme';
 
 export default defineConfig({
   fastRefresh: true,
@@ -48,12 +47,11 @@ export default defineConfig({
       .resolve.set('fullySpecified', false);
   },
   routes,
-  theme,
+  antd: {},
   jsMinifier: 'terser',
   lessLoader: {
     modifyVars: {
       '@ant-prefix': 'privateAntd',
-      ...theme,
     },
   },
 });

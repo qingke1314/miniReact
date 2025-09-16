@@ -17,7 +17,7 @@ import {
   message,
   Modal,
   Row,
-} from 'antd';
+} from 'antd-v5';
 import { useEffect, useState } from 'react';
 import PositionSelect from '../../PositionSelect';
 import { baseKeys } from '../const';

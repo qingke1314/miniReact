@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-01-21 14:01:57
  * @Description: desc
  */
-import { Select } from 'antd';
+import { Select } from 'antd-v5';
 import { debounce } from 'lodash';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 import styles from './index.less';

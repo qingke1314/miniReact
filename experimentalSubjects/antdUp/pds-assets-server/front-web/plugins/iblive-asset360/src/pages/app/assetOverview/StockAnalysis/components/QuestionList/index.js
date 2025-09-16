@@ -4,7 +4,7 @@ import {
   removeQuestion,
   updateQuestion,
 } from '@asset360/apis/stockAnalysis';
-import { Button, Form, message, Popconfirm, Rate, Tag, Tooltip } from 'antd';
+import { Button, Form, message, Popconfirm, Rate, Tag, Tooltip } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import { useRef, useState } from 'react';
 import ReactQuill from 'react-quill'; // 引入主元件

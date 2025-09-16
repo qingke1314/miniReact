@@ -10,7 +10,7 @@
 import { DownOutlined } from '@ant-design/icons';
 import { invokeAPIIndex } from '@asset360/apis/api';
 import CustomTree from '@asset360/components/CustomTree';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import { convertTreeMenu } from 'iblive-base';
 import { useEffect, useState } from 'react';
 

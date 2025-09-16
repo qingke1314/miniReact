@@ -14,7 +14,7 @@ import {
   SyncOutlined,
 } from '@ant-design/icons';
 import { useSize } from 'ahooks';
-import { Button, Input, message, Modal, Space } from 'antd';
+import { Button, Input, message, Modal, Space } from 'antd-v5';
 import { filterTree } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import { Item, Menu, theme, useContextMenu } from 'react-contexify';

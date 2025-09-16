@@ -6,7 +6,7 @@
  * @Description:
  */
 import { executeApi } from '@asset360/apis/appCommon';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import PieChart from '../components/PieChart';

@@ -8,7 +8,7 @@
  */
 import { SyncOutlined } from '@ant-design/icons';
 import CustomTree from '@asset360/components/CustomTree';
-import { Badge, Button, Input, Radio, Space, Spin } from 'antd';
+import { Badge, Button, Input, Radio, Space, Spin } from 'antd-v5';
 import { desensitization } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import styles from '../index.less';

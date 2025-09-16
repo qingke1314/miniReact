@@ -12,7 +12,7 @@ import {
 } from '@asset360/apis/positionEmailTemplate';
 import add from '@asset360/assets/app/position/add.svg';
 import CustomCard from '@asset360/components/CustomCard';
-import { Col, Form, Input, message, Popconfirm, Row, Space } from 'antd';
+import { Col, Form, Input, message, Popconfirm, Row, Space } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { debounce } from 'lodash';
 import { useEffect, useRef, useState } from 'react';

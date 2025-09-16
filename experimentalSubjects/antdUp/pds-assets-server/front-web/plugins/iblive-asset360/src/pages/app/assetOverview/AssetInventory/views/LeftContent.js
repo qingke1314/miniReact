@@ -8,7 +8,7 @@
  */
 import { executeApi } from '@asset360/apis/appCommon';
 import CustomTree from '@asset360/components/CustomTree';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import styles from '../index.less';

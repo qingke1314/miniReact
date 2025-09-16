@@ -8,7 +8,7 @@
 import { editPwd, editUserInfo, queryUserUnit } from '@asset360/apis/user';
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
-import { Form, Input, message } from 'antd';
+import { Form, Input, message } from 'antd-v5';
 import {
   checkUserPassword,
   getUserInfo,

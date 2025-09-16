@@ -10,7 +10,7 @@
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, Row, Spin } from 'antd';
+import { Col, Row, Spin } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { isNumber } from 'lodash';
 import { useEffect, useState } from 'react';

@@ -1,6 +1,6 @@
 .anchor_steps_item {
   :global {
-    .@{ant-main-prefix-cls}-steps-item-container {
+    .privateAntd-steps-item-container {
       position: relative;
       margin: 0 0 0 30px;
       &::before {
@@ -15,11 +15,11 @@
         content: '';
       }
     }
-    .@{ant-main-prefix-cls}-steps-item-tail,
-    .@{ant-main-prefix-cls}-steps-item-icon {
+    .privateAntd-steps-item-tail,
+    .privateAntd-steps-item-icon {
       display: none !important;
     }
-    .@{ant-main-prefix-cls}-steps-item-content {
+    .privateAntd-steps-item-content {
       display: flex !important;
       flex: 1;
       align-items: center;
@@ -28,7 +28,7 @@
       height: 28px !important;
       min-height: 28px !important;
       cursor: pointer;
-      .@{ant-main-prefix-cls}-steps-item-title {
+      .privateAntd-steps-item-title {
         height: 28px !important;
         padding: 0 8px;
         color: #777777 !important;
@@ -40,7 +40,7 @@
 }
 .anchor_steps_item:not(:last-child) {
   :global {
-    .@{ant-main-prefix-cls}-steps-item-container {
+    .privateAntd-steps-item-container {
       &::after {
         position: absolute;
         top: 20px;
@@ -54,18 +54,18 @@
 }
 .anchor_steps_item_vertical {
   :global {
-    .@{ant-main-prefix-cls}-steps-item-container {
+    .privateAntd-steps-item-container {
       margin: 0 0 0 16px;
       &::before {
         top: 30px;
         left: -16px;
       }
     }
-    .@{ant-main-prefix-cls}-steps-item-content {
+    .privateAntd-steps-item-content {
       width: 30px !important;
       height: fit-content !important;
       min-height: 56px !important;
-      .@{ant-main-prefix-cls}-steps-item-title {
+      .privateAntd-steps-item-title {
         height: fit-content !important;
         padding: 4px;
         line-height: 1em;
@@ -79,7 +79,7 @@
 .anchor_steps_item_vertical:not(:last-child) {
   padding-bottom: 8px;
   :global {
-    .@{ant-main-prefix-cls}-steps-item-container {
+    .privateAntd-steps-item-container {
       &::after {
         top: 38px;
         left: -13px;
@@ -90,7 +90,7 @@
 }
 .anchor_steps {
   :global {
-    .@{ant-main-prefix-cls}-steps-item-active {
+    .privateAntd-steps-item-active {
       &::before {
         position: absolute;
         top: 9px;
@@ -115,11 +115,11 @@
         transform: rotate(-90deg);*/
         content: '';
       }
-      .@{ant-main-prefix-cls}-steps-item-content {
+      .privateAntd-steps-item-content {
         background: var(--sider-selected-background);
         border-radius: 5px 5px 5px 5px;
       }
-      .@{ant-main-prefix-cls}-steps-item-title {
+      .privateAntd-steps-item-title {
         color: #ffffff !important;
       }
     }
@@ -127,7 +127,7 @@
 }
 .anchor_steps_small {
   :global {
-    .@{ant-main-prefix-cls}-steps-item-active {
+    .privateAntd-steps-item-active {
       &::before {
         top: 30px;
         left: 0;

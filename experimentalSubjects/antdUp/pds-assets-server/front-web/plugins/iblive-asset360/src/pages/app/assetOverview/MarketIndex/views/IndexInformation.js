@@ -8,7 +8,7 @@
 
 import { executeApi } from '@asset360/apis/appCommon';
 import CustomTitle from '@asset360/components/CustomTitle';
-import { Descriptions, Input, Spin } from 'antd';
+import { Descriptions, Input, Spin } from 'antd-v5';
 import { useEffect, useState } from 'react';
 
 export default ({ tabKey, activedTab, selectedMarket }) => {

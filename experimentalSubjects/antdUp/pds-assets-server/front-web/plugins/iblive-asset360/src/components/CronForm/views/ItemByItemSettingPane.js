@@ -1,4 +1,4 @@
-import { Tabs } from 'antd';
+import { Tabs } from 'antd-v5';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import DayPane from './DayPane';
 import HourPane from './HourPane';

@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-15 09:44:13
  * @Description:
  */
-import { Col, DatePicker, Row } from 'antd';
+import { Col, DatePicker, Row } from 'antd-v5';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDate } from '../../store/standardPositionSlice';
 import styles from './index.less';

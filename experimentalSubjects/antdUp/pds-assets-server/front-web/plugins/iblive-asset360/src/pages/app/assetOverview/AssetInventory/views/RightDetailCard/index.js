@@ -8,7 +8,7 @@
  */
 import { CloseOutlined } from '@ant-design/icons';
 import CustomAnchor from '@asset360/components/CustomAnchor';
-import { Button } from 'antd';
+import { Button } from 'antd-v5';
 import { useEffect, useRef } from 'react';
 import styles from '../../index.less';
 import DealTable from './DealTable';

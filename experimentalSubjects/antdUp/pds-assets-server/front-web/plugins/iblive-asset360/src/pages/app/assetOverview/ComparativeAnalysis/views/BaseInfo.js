@@ -1,6 +1,6 @@
 import OverviewTable from '@asset360/components/OverviewTable';
 import { history } from '@umijs/max';
-import { Radio, Row, Space } from 'antd';
+import { Radio, Row, Space } from 'antd-v5';
 import { desensitization, getRealPath, moneyFormat } from 'iblive-base';
 import { isNumber } from 'lodash';
 import { useState } from 'react';

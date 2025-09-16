@@ -27,7 +27,7 @@ import {
   Row,
   Select,
   TreeSelect,
-} from 'antd';
+} from 'antd-v5';
 import { useEffect, useState } from 'react';
 import { queryGroupTree } from '../../../../../../apis/positionFundGroup';
 import { WARN_LEVEL } from '../../PositionEvents/CONST';

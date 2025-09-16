@@ -12,7 +12,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { loginOut } from '@asset360/apis/user';
-import { Avatar, Dropdown, Menu, Space } from 'antd';
+import { Avatar, Dropdown, Menu, Space } from 'antd-v5';
 import { clearUserInfo, getUserInfo } from 'iblive-base';
 import { useState } from 'react';
 import { history, useModel } from 'umi';

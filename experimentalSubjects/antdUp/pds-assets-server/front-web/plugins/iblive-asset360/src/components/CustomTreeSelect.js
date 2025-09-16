@@ -6,7 +6,7 @@
  * @Description: 组别带图表的树形选择ui组件
  */
 import { FolderFilled, FolderOpenFilled } from '@ant-design/icons';
-import { TreeSelect } from 'antd';
+import { TreeSelect } from 'antd-v5';
 
 export default ({ ...config }) => {
   return (

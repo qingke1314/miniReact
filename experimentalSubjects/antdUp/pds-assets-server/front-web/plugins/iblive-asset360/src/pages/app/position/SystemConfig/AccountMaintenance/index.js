@@ -8,7 +8,7 @@
 import { getPositionAuthList } from '@asset360/apis/position';
 import { getAllUsers } from '@asset360/apis/user';
 import CustomCard from '@asset360/components/CustomCard';
-import { Input, Tag } from 'antd';
+import { Input, Tag } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import PositionTable from '../../components/PositionTable';

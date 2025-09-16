@@ -1,7 +1,7 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
 import { useSize } from 'ahooks';
-import { Radio, Row, Spin } from 'antd';
+import { Radio, Row, Spin } from 'antd-v5';
 import { BarChart, LineChart } from 'echarts/charts';
 import {
   GridComponent,

@@ -7,7 +7,7 @@
  */
 import { getUserInfo, randomWord } from 'iblive-base';
 import { SyncOutlined } from '@ant-design/icons';
-import { notification, Upload } from 'antd';
+import { notification, Upload } from 'antd-v5';
 import axios from 'axios';
 import { useRef } from 'react';
 

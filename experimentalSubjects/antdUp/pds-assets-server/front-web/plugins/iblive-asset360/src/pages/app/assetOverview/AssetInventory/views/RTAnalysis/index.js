@@ -9,7 +9,7 @@
 import { MinusSquareOutlined, PlusSquareOutlined } from '@ant-design/icons';
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/VirtualTable';
-import { Button, Col, Form, Input, Radio, Row, Select, Space } from 'antd';
+import { Button, Col, Form, Input, Radio, Row, Select, Space } from 'antd-v5';
 import { requestUtils } from 'iblive-base';
 import { debounce } from 'lodash';
 import { useEffect, useState, useRef } from 'react';

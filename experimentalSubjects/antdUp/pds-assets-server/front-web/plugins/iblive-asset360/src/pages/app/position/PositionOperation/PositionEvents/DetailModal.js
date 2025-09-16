@@ -8,7 +8,7 @@
 import { queryByEventId } from '@asset360/apis/position';
 import CustomModal from '@asset360/components/CustomModal';
 import PositionTable from '@asset360/components/PositionTable';
-import { Tag } from 'antd';
+import { Tag } from 'antd-v5';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { EVENT_STATUS_LIST } from './CONST';

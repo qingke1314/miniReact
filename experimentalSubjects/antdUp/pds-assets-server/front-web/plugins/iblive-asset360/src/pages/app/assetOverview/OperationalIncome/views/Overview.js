@@ -7,7 +7,7 @@
  * @Description: 操作收益概览头部组件
  */
 import { moneyFormat } from 'iblive-base';
-import { Col, Row, Spin } from 'antd';
+import { Col, Row, Spin } from 'antd-v5';
 import styles from '../index.less';
 
 const ZqItem = ({ title, value, className }) => (
@@ -20,7 +20,13 @@ const ZqItem = ({ title, value, className }) => (
     }}
     className={className}
   >
-    <b style={{ color: 'var(--text-color)', fontWeight: 'bold', fontSize: '1.3em' }}>
+    <b
+      style={{
+        color: 'var(--text-color)',
+        fontWeight: 'bold',
+        fontSize: '1.3em',
+      }}
+    >
       {value}
     </b>
     <span>{title}</span>
@@ -29,25 +35,29 @@ const ZqItem = ({ title, value, className }) => (
 
 const Overview = ({ loading, info }) => {
   // 计算操作次数总和
-  const totalOperationNum = info?.records?.reduce((sum, record) => {
-    return sum + (record?.opeartionNum || 0);
-  }, 0) || 0;
+  const totalOperationNum =
+    info?.records?.reduce((sum, record) => {
+      return sum + (record?.opeartionNum || 0);
+    }, 0) || 0;
 
   // 计算正收益次数总和
-  const totalPositiveNum = info?.records?.reduce((sum, record) => {
-    return sum + (record?.positiveNum || 0);
-  }, 0) || 0;
+  const totalPositiveNum =
+    info?.records?.reduce((sum, record) => {
+      return sum + (record?.positiveNum || 0);
+    }, 0) || 0;
 
   // 计算操作盈亏总和
-  const totalOperationErngins = info?.records?.reduce((sum, record) => {
-    return sum + (record?.operationErngins || 0);
-  }, 0) || 0;
+  const totalOperationErngins =
+    info?.records?.reduce((sum, record) => {
+      return sum + (record?.operationErngins || 0);
+    }, 0) || 0;
 
   // 计算单笔最大盈亏（从maxErngings中取最大值）
-  const maxSingleProfitLoss = info?.records?.reduce((max, record) => {
-    const current = record?.maxErngings || 0;
-    return current > max ? current : max;
-  }, 0) || 0;
+  const maxSingleProfitLoss =
+    info?.records?.reduce((max, record) => {
+      const current = record?.maxErngings || 0;
+      return current > max ? current : max;
+    }, 0) || 0;
 
   return (
     <div className="blank-card-asset" style={{ marginBottom: 9 }}>

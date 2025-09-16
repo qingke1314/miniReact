@@ -9,7 +9,7 @@
 import { executeIndex } from '@asset360/apis/position';
 import CodeEditor from '@asset360/components/CodeEditor';
 import CustomModal from '@asset360/components/CustomModal';
-import { Button, Spin } from 'antd';
+import { Button, Spin } from 'antd-v5';
 import moment from 'moment';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../../index.less';

@@ -1,5 +1,5 @@
 import EarningsChart from './EarningsChart';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import moment from 'moment';
 import { memo, useState } from 'react';
 import StatsCard from '../../../IncomeAnalysis/views/StatsCard';

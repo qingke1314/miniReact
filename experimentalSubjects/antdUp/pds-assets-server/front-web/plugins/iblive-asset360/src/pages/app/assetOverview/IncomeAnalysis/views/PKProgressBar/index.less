@@ -21,11 +21,11 @@
 /* 进度条组件本身的样式调整 */
 .pk-progress-bar {
   :global {
-    .@{ant-main-prefix-cls}-progress {
+    .privateAntd-progress {
       display: block; /* 确保 progress 占满容器 */
     }
-    .@{ant-main-prefix-cls}-progress-inner,
-    .@{ant-main-prefix-cls}-progress-bg {
+    .privateAntd-progress-inner,
+    .privateAntd-progress-bg {
       border-radius: 0 !important; /* 关键：移除antd自带的圆角，避免在连接处出现缝隙 */
     }
   }

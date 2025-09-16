@@ -6,7 +6,7 @@
  * @Description:
  */
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { InputNumber } from 'antd';
+import { InputNumber } from 'antd-v5';
 import { useState } from 'react';
 import styles from './index.less';
 

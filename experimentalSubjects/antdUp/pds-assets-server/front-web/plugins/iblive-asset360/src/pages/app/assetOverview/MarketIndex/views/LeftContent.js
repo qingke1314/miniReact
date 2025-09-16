@@ -2,7 +2,7 @@ import { StarFilled, StarOutlined, SyncOutlined } from '@ant-design/icons';
 import { executeApi } from '@asset360/apis/appCommon';
 import CustomTree from '@asset360/components/CustomTree';
 import SearchInputWithQuickSelect from '@asset360/components/SearchInputWithQuickSelect';
-import { Button, Col, Row, Space, Spin } from 'antd';
+import { Button, Col, Row, Space, Spin } from 'antd-v5';
 import { useGetHeight } from 'iblive-base';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from '../index.less';

@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-12-30 16:17:42
  * @Description:
  */
-import { Tabs } from 'antd';
+import { Tabs } from 'antd-v5';
 import { useState } from 'react';
 import ChangeLog from './ChangeLog';
 import IndexComponent from './IndexComponent';

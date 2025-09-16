@@ -8,7 +8,7 @@ import {
   updateTemplate,
 } from '@asset360/apis/positionTemplate';
 import save from '@asset360/assets/app/position/save.svg';
-import { Col, message, Popconfirm, Row, Spin, Switch } from 'antd';
+import { Col, message, Popconfirm, Row, Spin, Switch } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import InstCal from '../../components/InstCal';
 import PositionButton from '../../components/PositionButton';

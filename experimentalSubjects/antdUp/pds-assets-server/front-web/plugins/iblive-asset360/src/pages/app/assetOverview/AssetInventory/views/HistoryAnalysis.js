@@ -1,6 +1,6 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, DatePicker, Form, Radio, Row, Select, Space } from 'antd';
+import { Col, DatePicker, Form, Radio, Row, Select, Space } from 'antd-v5';
 import { cloneDeep } from 'lodash';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

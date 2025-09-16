@@ -6,7 +6,7 @@
  * @Description:
  */
 import DateRangeWithQuickSelect from '@asset360/components/DateRangeWithQuickSelect';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import LineChart from './LineChart';
 const data_1 = [

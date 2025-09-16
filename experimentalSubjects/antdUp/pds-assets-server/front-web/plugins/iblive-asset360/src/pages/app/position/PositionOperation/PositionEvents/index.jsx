@@ -27,7 +27,7 @@ import {
   Row,
   Space,
   Tag,
-} from 'antd';
+} from 'antd-v5';
 import { desensitization, useGetHeight } from 'iblive-base';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../../components/index.less';

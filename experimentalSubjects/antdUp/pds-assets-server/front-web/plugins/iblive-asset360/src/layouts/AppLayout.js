@@ -7,57 +7,32 @@
  */
 import { Outlet } from '@umijs/max';
 import { CustomLayout } from 'iblive-base';
-// const iconMap = {
-//   风控大屏: <RadarChartOutlined />,
-//   风险试算: <AimOutlined />,
-//   风险设置: <SettingOutlined />,
-//   合规项管理: <FolderOpenOutlined />,
-//   公司概况: getImg(companyResume),
-//   管理产品: getImg(products),
-//   业绩表现: getImg(performance),
-//   基金经理: getImg(fundManager),
-//   风险绩效: getImg(risk),
-//   资产簿记: getImg(positions),
-//   交易流水: getImg(trade),
-//   // 实时头寸: getImg(asset),
-//   风险预警查询: <AlertOutlined />,
-//   交易行为监控: <AccountBookOutlined />,
-//   静态风控监控: <AimOutlined />,
-//   系统参数维护: <AppstoreOutlined />,
-//   风控报告: <FileTextOutlined />,
-//   调用监控: <MonitorOutlined />,
-//   风控审核: <IdcardOutlined />,
-//   指令信息: <InfoCircleOutlined />,
-//   产品信息: <CodepenOutlined />,
-//   主体池: <BankOutlined />,
-//   基础设置: <FormOutlined />,
-//   产品组设置: <PartitionOutlined />,
-//   风险监控: <BranchesOutlined />,
-//   调度监控: <ClockCircleOutlined />,
-//   调度配置: <FieldTimeOutlined />,
-//   产品设置: <SettingOutlined />,
-//   交易日维护: <CalendarOutlined />,
-//   市场参数: <ControlOutlined />,
-//   业务参数: <CodeSandboxOutlined />,
-//   头寸概览: <AppstoreOutlined />,
-//   现金流预测: <AimOutlined />,
-//   日初头寸测算: <CalculatorOutlined />,
-//   O32头寸: <TransactionOutlined />,
-//   日终头寸: <CarryOutOutlined />,
-//   单产品头寸: <LineChartOutlined />,
-//   交易市场维护: <BankOutlined />,
-//   指令下达: <TransactionOutlined />,
-//   组合维护: <ApartmentOutlined />,
-//   账户管理: <TeamOutlined />,
-//   指令管理: <AuditOutlined />,
-// };
+import { useModel } from 'umi';
+import zhCN from 'antd-v5/lib/locale/zh_CN';
+import { ConfigProvider, theme as antdTheme } from 'antd-v5';
 
 export default () => {
+  const { theme } = useModel('global');
+  const { defaultAlgorithm, darkAlgorithm } = antdTheme;
+  const themeConfig = theme === 'dark' ? darkAlgorithm : defaultAlgorithm;
   return (
-    <CustomLayout
-      padding={'8px'} //首页边距小
+    <ConfigProvider
+      prefixCls={ANTD_PREFIX_CLS}
+      locale={zhCN}
+      componentSize="small"
+      theme={{
+        algorithm: themeConfig,
+        token: {
+          colorPrimary: '#1186f1',
+          fontFamily: `'myFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`,
+        },
+      }}
     >
-      <Outlet />
-    </CustomLayout>
+      <CustomLayout
+        padding={'8px'} //首页边距小
+      >
+        <Outlet />
+      </CustomLayout>
+    </ConfigProvider>
   );
 };

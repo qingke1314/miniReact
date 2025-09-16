@@ -11,7 +11,7 @@ import {
   queryTradeDetailPositionList,
 } from '@asset360/apis/position';
 import CustomTree from '@asset360/components/CustomTree';
-import { Input, Radio, Space, Tabs } from 'antd';
+import { Input, Radio, Space, Tabs } from 'antd-v5';
 import {
   desensitization,
   filterTree,

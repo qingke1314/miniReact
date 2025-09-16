@@ -11,7 +11,7 @@ import {
   querySnapshotRecord,
 } from '@asset360/apis/snapshot';
 import CustomModal from '@asset360/components/CustomModal';
-import { Button, Col, DatePicker, Form, Row } from 'antd';
+import { Button, Col, DatePicker, Form, Row } from 'antd-v5';
 import {
   CustomTable,
   CustomTableWithYScroll,

@@ -1,4 +1,4 @@
-import { Select } from 'antd';
+import { Select } from 'antd-v5';
 import { dayAry } from '../const';
 
 export default ({ value, onChange, disabled }) => {

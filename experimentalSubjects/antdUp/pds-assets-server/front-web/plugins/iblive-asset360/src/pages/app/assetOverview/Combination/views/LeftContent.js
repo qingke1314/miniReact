@@ -20,7 +20,7 @@ import {
 import CustomButtonGroup from '@asset360/components/CustomButtonGroup';
 import CustomModal from '@asset360/components/CustomModal';
 import CustomTree from '@asset360/components/CustomTree';
-import { Form, message, Modal, Space, Spin } from 'antd';
+import { Form, message, Modal, Space, Spin } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Item, Menu, theme, useContextMenu } from 'react-contexify';

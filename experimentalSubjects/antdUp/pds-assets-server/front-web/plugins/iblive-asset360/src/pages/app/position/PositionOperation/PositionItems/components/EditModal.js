@@ -24,7 +24,7 @@ import {
   Row,
   Select,
   TreeSelect,
-} from 'antd';
+} from 'antd-v5';
 import { useEffect, useState } from 'react';
 
 export default ({

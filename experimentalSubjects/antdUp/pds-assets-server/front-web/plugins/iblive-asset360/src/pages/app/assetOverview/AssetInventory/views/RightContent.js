@@ -8,7 +8,7 @@
  */
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { executeApi } from '@asset360/apis/appCommon';
-import { Tabs } from 'antd';
+import { Tabs } from 'antd-v5';
 import {
   CustomTabs,
   getFormatDate,

@@ -1,5 +1,5 @@
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import React, { useEffect, useState } from 'react';
 import { selectType } from '../../const';

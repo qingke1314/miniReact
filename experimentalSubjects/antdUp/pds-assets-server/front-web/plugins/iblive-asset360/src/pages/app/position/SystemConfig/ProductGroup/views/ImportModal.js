@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-19 09:39:07
  * @Description:
  */
-import { Button, Col, Form, Input, message, Row } from 'antd';
+import { Button, Col, Form, Input, message, Row } from 'antd-v5';
 import { CustomTableWithYScroll, desensitization } from 'iblive-base';
 import { useEffect, useState } from 'react';
 import { findAllFund } from '../../../../../../apis/positionFund';

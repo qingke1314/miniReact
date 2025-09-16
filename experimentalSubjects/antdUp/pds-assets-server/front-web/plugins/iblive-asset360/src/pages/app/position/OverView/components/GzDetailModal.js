@@ -10,7 +10,7 @@ import { LockOutlined, SearchOutlined } from '@ant-design/icons';
 import { getCashByCode } from '@asset360/apis/position';
 import CustomModal from '@asset360/components/CustomModal';
 import OperationColunm from '@asset360/components/OperationColunm';
-import { Tooltip } from 'antd';
+import { Tooltip } from 'antd-v5';
 import { CustomTableWithYScroll, moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

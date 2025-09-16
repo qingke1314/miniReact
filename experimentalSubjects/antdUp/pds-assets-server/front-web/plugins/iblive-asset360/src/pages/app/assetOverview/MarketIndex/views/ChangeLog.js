@@ -6,7 +6,7 @@
  * @Description:
  */
 import { executeApi } from '@asset360/apis/appCommon';
-import { Col, Radio, Row, Space, Spin } from 'antd';
+import { Col, Radio, Row, Space, Spin } from 'antd-v5';
 import { CustomTable, moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

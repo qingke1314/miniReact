@@ -1,4 +1,4 @@
-import { Affix, Col, Form, Row } from 'antd';
+import { Affix, Col, Form, Row } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

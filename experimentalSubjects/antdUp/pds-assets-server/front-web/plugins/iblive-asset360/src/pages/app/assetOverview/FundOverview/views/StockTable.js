@@ -1,7 +1,7 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import moment from 'moment';
 import { useEffect, useState, useRef } from 'react';
-import { Spin } from 'antd';
+import { Spin } from 'antd-v5';
 import { useSize } from 'ahooks';
 import { PieChart } from 'echarts/charts';
 import {

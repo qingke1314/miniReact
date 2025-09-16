@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button } from 'antd-v5';
 import styles from './index.less';
 export default ({ func, text, ...config }) => {
   return (

@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-01-21 16:21:32
  * @Description: desc
  */
-import { message, Spin } from 'antd';
+import { message, Spin } from 'antd-v5';
 import { clearUserInfo, getUserInfo } from 'iblive-base';
 import useMount from 'react-use/esm/useMount';
 import { history } from 'umi';

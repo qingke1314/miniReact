@@ -1,7 +1,7 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { getFundTreeByAuth } from '@asset360/apis/position';
 import { queryPositionCompareInfo } from '@asset360/apis/PositionReconciliation';
-import { Col, DatePicker, Form, Input, Row, Spin } from 'antd';
+import { Col, DatePicker, Form, Input, Row, Spin } from 'antd-v5';
 import { desensitization, moneyFormat, requestUtils } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

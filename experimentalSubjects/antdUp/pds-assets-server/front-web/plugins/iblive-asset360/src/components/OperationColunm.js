@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-01-05 10:16:37
  * @LastEditors: chenzongjun chenzongjun@apexsoft.com.cn
  */
-import { Popconfirm, Space } from 'antd';
+import { Popconfirm, Space } from 'antd-v5';
 
 export default ({
   deleteFunc,

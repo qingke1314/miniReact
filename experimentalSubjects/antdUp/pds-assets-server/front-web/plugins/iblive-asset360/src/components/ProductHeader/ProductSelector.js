@@ -7,7 +7,7 @@
  */
 import { findAllForTreeWithAuth } from '@asset360/apis/standardPosition';
 import RecordSequenceSelector from '@asset360/components/RecordSequenceSelector';
-import { Divider, Select, Space } from 'antd';
+import { Divider, Select, Space } from 'antd-v5';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAstUnitId, setFundCode } from '../../store/standardPositionSlice';

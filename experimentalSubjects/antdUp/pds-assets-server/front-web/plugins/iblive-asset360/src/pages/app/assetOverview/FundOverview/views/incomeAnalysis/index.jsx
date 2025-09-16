@@ -4,7 +4,7 @@ import {
   options,
 } from '@asset360/pages/app/assetOverview/IncomeAnalysis/const';
 import EarningsChart from '@asset360/pages/app/assetOverview/IncomeAnalysis/views/EarningsChart';
-import { Col, Form, Row } from 'antd';
+import { Col, Form, Row } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import moment from 'moment';
 import { useMemo, useState } from 'react';

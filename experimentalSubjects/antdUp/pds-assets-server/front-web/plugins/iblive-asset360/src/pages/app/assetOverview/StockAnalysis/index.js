@@ -7,7 +7,7 @@ import {
   querySector,
   removeFromPool,
 } from '@asset360/apis/stockAnalysis';
-import { Button, Col, Form, message, Popconfirm, Radio, Row } from 'antd';
+import { Button, Col, Form, message, Popconfirm, Radio, Row } from 'antd-v5';
 import { CustomForm, CustomTableWithYScroll } from 'iblive-base';
 import React, { useCallback, useEffect, useState } from 'react';
 import DrawerContent from './components/DrawerContent';

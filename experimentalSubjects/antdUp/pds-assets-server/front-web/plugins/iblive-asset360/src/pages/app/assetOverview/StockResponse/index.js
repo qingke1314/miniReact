@@ -1,6 +1,6 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { querySecQuestionPage } from '@asset360/apis/stockAnalysis';
-import { Form } from 'antd';
+import { Form } from 'antd-v5';
 import { CustomForm, CustomTableWithYScroll } from 'iblive-base';
 import React, { useEffect, useState } from 'react';
 import QuestionList from '../StockAnalysis/components/QuestionList';

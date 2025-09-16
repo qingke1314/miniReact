@@ -9,7 +9,7 @@
 
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/OverviewTable';
-import { Col, Form, Input, Radio, Row, Space } from 'antd';
+import { Col, Form, Input, Radio, Row, Space } from 'antd-v5';
 import { desensitization, getRealPath, moneyFormat } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useState } from 'react';

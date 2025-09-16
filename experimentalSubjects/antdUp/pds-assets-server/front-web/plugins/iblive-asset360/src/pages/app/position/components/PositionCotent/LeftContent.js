@@ -7,7 +7,7 @@
  */
 import { PlusOutlined } from '@ant-design/icons';
 import CustomTree from '@asset360/components/CustomTree';
-import { Button, Input, Space } from 'antd';
+import { Button, Input, Space } from 'antd-v5';
 import { filterTree } from 'iblive-base';
 import { useMemo, useState } from 'react';
 import styles from '../index.less';

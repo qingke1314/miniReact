@@ -8,7 +8,7 @@
  */
 import { executeApi } from '@asset360/apis/appCommon';
 import OverviewTable from '@asset360/components/VirtualTable';
-import { Col, Radio, Row, Select, Space } from 'antd';
+import { Col, Radio, Row, Select, Space } from 'antd-v5';
 import { moneyFormat } from 'iblive-base';
 import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';

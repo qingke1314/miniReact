@@ -1,4 +1,4 @@
-import { InputNumber } from 'antd';
+import { InputNumber } from 'antd-v5';
 import React from 'react';
 
 function InputFromInterval({

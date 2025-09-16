@@ -8,7 +8,7 @@
  */
 
 import { moneyFormat } from 'iblive-base';
-import { Descriptions } from 'antd';
+import { Descriptions } from 'antd-v5';
 import styles from '../index.less';
 
 export default function BaseMsg({ info }) {

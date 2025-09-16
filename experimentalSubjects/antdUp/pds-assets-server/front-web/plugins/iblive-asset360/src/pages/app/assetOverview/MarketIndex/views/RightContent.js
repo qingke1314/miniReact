@@ -1,4 +1,4 @@
-import { Empty } from 'antd';
+import { Empty } from 'antd-v5';
 import DetailInfo from './DetailInfo';
 import TrendInfo from './TrendInfo';
 

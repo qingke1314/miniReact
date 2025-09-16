@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-02-10 09:15:59
  * @Description:
  */
-import { Col, Row } from 'antd';
+import { Col, Row } from 'antd-v5';
 import { useSelector } from 'react-redux';
 import EarningsChart from './views/EarningsChart';
 

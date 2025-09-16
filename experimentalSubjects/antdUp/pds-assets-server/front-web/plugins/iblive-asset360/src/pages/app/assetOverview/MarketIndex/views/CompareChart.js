@@ -1,7 +1,6 @@
-
 import { moneyFormat, generateColor } from 'iblive-base';
 import { useSize } from 'ahooks';
-import { Col, Row, Tag } from 'antd';
+import { Col, Row, Tag } from 'antd-v5';
 import { LineChart } from 'echarts/charts';
 import {
   DataZoomComponent,

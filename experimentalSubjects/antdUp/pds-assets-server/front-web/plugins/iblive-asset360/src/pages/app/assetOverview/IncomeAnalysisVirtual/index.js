@@ -1,4 +1,4 @@
-import { Col, Form, Row, Spin } from 'antd';
+import { Col, Form, Row, Spin } from 'antd-v5';
 import { CustomForm } from 'iblive-base';
 import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';

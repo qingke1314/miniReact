@@ -1,4 +1,4 @@
-import { Progress } from 'antd';
+import { Progress } from 'antd-v5';
 
 const Person = ({ allPerson, data = [] }) => {
   const colorList = [

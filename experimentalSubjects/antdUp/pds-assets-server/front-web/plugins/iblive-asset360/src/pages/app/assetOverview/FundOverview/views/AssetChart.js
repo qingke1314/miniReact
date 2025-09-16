@@ -1,7 +1,7 @@
 import { executeApi } from '@asset360/apis/appCommon';
 import CustomCard from '@asset360/components/CustomCard';
 import { useSize } from 'ahooks';
-import { Radio, Skeleton } from 'antd';
+import { Radio, Skeleton } from 'antd-v5';
 import { BarChart, LineChart } from 'echarts/charts';
 import {
   GridComponent,
