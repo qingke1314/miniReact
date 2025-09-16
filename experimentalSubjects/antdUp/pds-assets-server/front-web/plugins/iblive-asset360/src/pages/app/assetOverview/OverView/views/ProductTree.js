@@ -120,73 +120,77 @@ const ProductTree = ({ height, onSelectIndex, setDetailInfo, detailInfo }) => {
   }, [apiParams]);
 
   return (
-    <Spin spinning={treeLoading} style={{ height: height - 47 }}>
-      <CustomTabs
-        value={activeTab}
-        onChange={(value) => {
-          setActiveTab(value);
-        }}
-        style={{ margin: '0 8px' }}
-        options={TAB_LIST}
-      ></CustomTabs>
-      <CustomTree
-        height={height - 47}
-        treeData={tree}
-        blockNode
-        icon={null}
-        selectedKeys={[detailInfo?.key]}
-        defaultExpandAll
-        onSelect={onSelectIndex}
-        expandAction={false}
-        expandedKeys={expandedKeys}
-        onExpand={(e) => {
-          setExpandedKeys(e);
-        }}
-        switcherIcon={<DownOutlined />}
-        titleRender={(record) => {
-          const { title, value, count } = record;
-          return (
-            <Row
-              justify="space-between"
-              align="middle"
-              className={styles.tree_title_wrap}
-            >
-              <div>
-                {['产品组合', '模拟组合', '虚拟组合'].includes(title) ? (
-                  <div className={styles.total_product_title}>{`${title}`}</div>
-                ) : (
-                  <div className={styles.title}>
-                    <div>{title}</div>
-                    {value ? (
-                      <div className="m-t-4">
-                        {moneyFormat({
-                          num: value / 100000000 || 0,
-                          unit: '亿',
-                        })}
-                      </div>
-                    ) : null}
-                  </div>
+    <div className={styles.tree}>
+      <Spin spinning={treeLoading} style={{ height: height - 47 }}>
+        <CustomTabs
+          value={activeTab}
+          onChange={(value) => {
+            setActiveTab(value);
+          }}
+          style={{ margin: '0 8px' }}
+          options={TAB_LIST}
+        ></CustomTabs>
+        <CustomTree
+          height={height - 47}
+          treeData={tree}
+          blockNode
+          icon={null}
+          selectedKeys={[detailInfo?.key]}
+          defaultExpandAll
+          onSelect={onSelectIndex}
+          expandAction={false}
+          expandedKeys={expandedKeys}
+          onExpand={(e) => {
+            setExpandedKeys(e);
+          }}
+          switcherIcon={<DownOutlined />}
+          titleRender={(record) => {
+            const { title, value, count } = record;
+            return (
+              <Row
+                justify="space-between"
+                align="middle"
+                className={styles.tree_title_wrap}
+              >
+                <div>
+                  {['产品组合', '模拟组合', '虚拟组合'].includes(title) ? (
+                    <div
+                      className={styles.total_product_title}
+                    >{`${title}`}</div>
+                  ) : (
+                    <div className={styles.title}>
+                      <div>{title}</div>
+                      {value ? (
+                        <div className="m-t-4">
+                          {moneyFormat({
+                            num: value / 100000000 || 0,
+                            unit: '亿',
+                          })}
+                        </div>
+                      ) : null}
+                    </div>
+                  )}
+                </div>
+                {title == '产品组合' || count == 0 || !count ? null : (
+                  <Space align="center">
+                    <div
+                      className={
+                        record?.key == detailInfo?.key
+                          ? styles.tree_title_number_active
+                          : styles.tree_title_number
+                      }
+                      style={{ fontSize: count > 99 ? '12px' : '14px' }}
+                    >
+                      <span>{count || 0}</span>
+                    </div>
+                  </Space>
                 )}
-              </div>
-              {title == '产品组合' || count == 0 || !count ? null : (
-                <Space align="center">
-                  <div
-                    className={
-                      record?.key == detailInfo?.key
-                        ? styles.tree_title_number_active
-                        : styles.tree_title_number
-                    }
-                    style={{ fontSize: count > 99 ? '12px' : '14px' }}
-                  >
-                    <span>{count || 0}</span>
-                  </div>
-                </Space>
-              )}
-            </Row>
-          );
-        }}
-      />
-    </Spin>
+              </Row>
+            );
+          }}
+        />
+      </Spin>
+    </div>
   );
 };
 

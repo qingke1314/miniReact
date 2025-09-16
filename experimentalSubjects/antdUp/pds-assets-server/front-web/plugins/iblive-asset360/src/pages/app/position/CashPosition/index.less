@@ -16,10 +16,8 @@
     .privateAntd-tabs-nav .privateAntd-tabs-tab-active {
       background: transparent !important;
     }
-    .privateAntd-tabs-tab.privateAntd-tabs-tab-active
-      .privateAntd-tabs-tab-btn,
-    .privateAntd-tabs-tab-active
-      .privateAntd-tabs-tab-remove {
+    .privateAntd-tabs-tab.privateAntd-tabs-tab-active .privateAntd-tabs-tab-btn,
+    .privateAntd-tabs-tab-active .privateAntd-tabs-tab-remove {
       color: #186df5;
     }
 
@@ -372,7 +370,7 @@
 }
 .custom_fund_details {
   padding: 8px;
-  background:var(--component-background);
+  background: var(--component-background);
   border-radius: 6px;
 }
 .configs_left_content {
@@ -491,7 +489,7 @@
   :global {
     .privateAntd-tree-treenode-selected {
       .privateAntd-tree-node-selected {
-        color: #186df5 !important;
+        color: var(--primary-color) !important;
       }
 
       &::after {

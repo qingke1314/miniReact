@@ -8,6 +8,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "publish:iblive-asset360": "cd plugins/iblive-asset360 && babel-node publish-beta.js",
     "publish:iblive-asset360-release": "cd plugins/iblive-asset360 && npm version 1.0.0-20250909 --allow-same-version && npm run build  && npm publish --registry=https://oss.apexsoft.com.cn/repository/npm-hosted/ --tag latest --no-git-checks",
+    "publish:iblive-asset360-alpha": "cd plugins/iblive-asset360 && npm version 1.0.0-alpha --allow-same-version && npm run build  && npm publish --registry=https://oss.apexsoft.com.cn/repository/npm-hosted/ --tag latest --no-git-checks",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && max dev",
     "start-mac": "export NODE_OPTIONS=--openssl-legacy-provider && max dev",
     "test": "umi-test",

@@ -16,9 +16,9 @@
     box-shadow: 0px 0px 17px 1px #ececec;
     :global {
       .privateAntd-tree-treenode-selected {
-        .privateAntd-tree-node-selected {
-          color: #313131 !important;
-        }
+        // .privateAntd-tree-node-selected {
+        //   // color: #313131 !important;
+        // }
 
         //选中标志
         &::after {
@@ -29,7 +29,7 @@
           width: 3px !important;
           height: 100%;
           margin-right: -4px;
-          background-color: #4e9ff7 !important;
+          background-color: var(--primary-color-5) !important;
           content: '';
         }
       }
@@ -54,12 +54,12 @@
       .privateAntd-tree-treenode-switcher-close {
         padding-bottom: 5px;
         padding-left: 8px;
-        color: #1a6ef5;
+        color: var(--primary-color);
       }
       .privateAntd-tree-treenode-switcher-open {
         padding-bottom: 5px;
         padding-left: 8px;
-        color: #1a6ef5;
+        color: var(--primary-color);
       }
       .privateAntd-tree-switcher_open {
         position: absolute;
@@ -244,7 +244,7 @@
 .table_sort {
   :global {
     td {
-      background: #ededed73;
+      background: #f1f1f10f !important;
       border-right: none !important;
     }
   }

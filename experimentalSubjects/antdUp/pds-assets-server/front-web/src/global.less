@@ -23,6 +23,22 @@ body p {
   padding-bottom: 0;
   padding-left: 0;
 }
+
+.privateAntd-tree.privateAntd-tree-directory
+  .privateAntd-tree-treenode-selected
+  .privateAntd-tree-node-content-wrapper:before,
+.privateAntd-tree.privateAntd-tree-directory
+  .privateAntd-tree-treenode-selected
+  .privateAntd-tree-node-content-wrapper:hover:before {
+  background-color: var(--background-color-light);
+  border-radius: 0;
+}
+
+.privateAntd-tree.privateAntd-tree-directory
+  .privateAntd-tree-treenode-selected {
+  background-color: var(--background-color-light);
+}
+
 body {
   // background-color: red;
   overflow: hidden;

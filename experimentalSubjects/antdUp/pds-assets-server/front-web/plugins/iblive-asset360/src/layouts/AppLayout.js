@@ -10,6 +10,7 @@ import { CustomLayout } from 'iblive-base';
 import { useModel } from 'umi';
 import zhCN from 'antd-v5/lib/locale/zh_CN';
 import { ConfigProvider, theme as antdTheme } from 'antd-v5';
+import ThemeVarSet from './ThemeVarSet';
 
 export default () => {
   const { theme } = useModel('global');
@@ -23,11 +24,12 @@ export default () => {
       theme={{
         algorithm: themeConfig,
         token: {
-          colorPrimary: '#1186f1',
+          colorPrimary: 'rgb(173, 121, 124)',
           fontFamily: `'myFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`,
         },
       }}
     >
+      <ThemeVarSet />
       <CustomLayout
         padding={'8px'} //首页边距小
       >

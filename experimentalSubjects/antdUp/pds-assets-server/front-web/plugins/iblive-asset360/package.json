@@ -1,6 +1,6 @@
 {
   "name": "iblive-asset360",
-  "version": "1.0.0-beta.20250915205113",
+  "version": "1.0.0-alpha",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
