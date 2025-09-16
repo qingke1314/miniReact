@@ -2,7 +2,7 @@ module.exports = {
   presets: [
     "@babel/preset-env",
     [
-      "@babel/preset-react",
+      "@babel/preset-react", // 处理 React 代码
       {
         // 关键：将运行时设置为 'automatic'
         runtime: "automatic",
